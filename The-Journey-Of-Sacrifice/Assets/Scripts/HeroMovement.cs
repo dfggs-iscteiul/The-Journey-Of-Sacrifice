@@ -7,13 +7,13 @@ public class HeroMovement : MonoBehaviour
     public float speed;
     private Rigidbody2D rigidbody;
     Vector3 change;
-
+    private Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
-
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -22,11 +22,23 @@ public class HeroMovement : MonoBehaviour
         change = Vector3.zero;
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
-        move();
+        if (change != Vector3.zero)
+        {
+            move();
+        }
+        else
+        {
+            animator.SetBool("moving", false);
+        }
+        
+       
     }
 
     void move()
     {
         rigidbody.MovePosition(transform.position + change * speed * Time.deltaTime);
+        animator.SetFloat("x", change.x);
+        animator.SetFloat("y", change.y);
+        //animator.SetBool("moving", true);
     }
 }
