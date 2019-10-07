@@ -39,6 +39,6 @@ public class HeroMovement : MonoBehaviour
         rigidbody.MovePosition(transform.position + change * speed * Time.deltaTime);
         animator.SetFloat("x", change.x);
         animator.SetFloat("y", change.y);
-        //animator.SetBool("moving", true);
+        animator.SetBool("moving", true);
     }
 }
