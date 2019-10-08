@@ -38,6 +38,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 1579052851
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Decorations
+    uniqueID: 963218865
+    locked: 0
+  - name: Gargoils
+    uniqueID: 3952516109
+    locked: 0
+  - name: Player
+    uniqueID: 4044564139
     locked: 0
