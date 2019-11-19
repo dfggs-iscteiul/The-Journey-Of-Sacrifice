@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraMovment : MonoBehaviour
+public class CameraMovment2 : MonoBehaviour
 {
     public Transform target;
     public float smoothing;
@@ -16,8 +16,8 @@ public class CameraMovment : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        float y = Mathf.Clamp(target.position.y, (float)(-11.59), (float)(14.36));
-        float x = Mathf.Clamp(target.position.x, (float)(-12.49), (float)(11.53));
+        float y = Mathf.Clamp(target.position.y, (float)(-11.66), (float)(14.81));
+        float x = Mathf.Clamp(target.position.x, (float)(-15.94), (float)(14.45));
 
         if (transform.position!=target.position)
         {
