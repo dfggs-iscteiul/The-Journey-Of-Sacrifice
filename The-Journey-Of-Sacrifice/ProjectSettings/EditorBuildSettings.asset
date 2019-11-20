@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FirstBoss.unity
     guid: bef6a92e3b07790448763acec4bb15a2
+  - enabled: 1
+    path: Assets/Scenes/Parcas-CS2.unity
+    guid: 6806f254e0851724fa6f0799a3ac80d4
   m_configObjects: {}

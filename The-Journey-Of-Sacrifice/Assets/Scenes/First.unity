@@ -232,7 +232,7 @@ Transform:
   m_LocalScale: {x: 0.8334, y: 0.9467, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &237809043
 Rigidbody2D:
@@ -690,7 +690,38 @@ Transform:
   m_LocalScale: {x: 0.53173476, y: 0.38982722, z: 0.89018434}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &733010165
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 6762785907257916825}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 733010166}
+  - component: {fileID: 1308783179}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &733010166
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 6762785907257916825}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 733010165}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1993693592}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &811078512
 GameObject:
@@ -4916,12 +4947,26 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!95 &1308783179 stripped
+--- !u!95 &1308783179
 Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 6762785908096913362, guid: faad9b026a1fb164c8bf183dce396608,
     type: 3}
   m_PrefabInstance: {fileID: 6762785907257916825}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 733010165}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1480008339
 GameObject:
   m_ObjectHideFlags: 0
@@ -4967,7 +5012,38 @@ Transform:
   - {fileID: 2078349284}
   - {fileID: 403920228}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1993693591
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 6762785907257916825}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1993693592}
+  m_Layer: 0
+  m_Name: Canvas (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1993693592
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 6762785907257916825}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1993693591}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 733010166}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2078349283
 GameObject:
@@ -6569,6 +6645,11 @@ PrefabInstance:
       propertyPath: transitionAnim
       value: 
       objectReference: {fileID: 1308783179}
+    - target: {fileID: 1368656985244275943, guid: 338a550f6181a574590081bc091b208b,
+        type: 3}
+      propertyPath: sceneToLoad
+      value: Parcas-CS2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 338a550f6181a574590081bc091b208b, type: 3}
 --- !u!1001 &1442520905000869409
@@ -6621,7 +6702,7 @@ PrefabInstance:
     - target: {fileID: 1442520905770266717, guid: 25295acb1bfcc85419ab24094e94c1fe,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1442520905770266717, guid: 25295acb1bfcc85419ab24094e94c1fe,
         type: 3}
