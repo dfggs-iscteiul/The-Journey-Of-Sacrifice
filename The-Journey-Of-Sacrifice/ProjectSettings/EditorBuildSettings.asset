@@ -14,25 +14,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Parcas-CS2.unity
     guid: 6806f254e0851724fa6f0799a3ac80d4
-  - enabled: 1
-    path: Assets/Scenes/Story-CS4.unity
-    guid: ced705ed79002fe4ab2885b4b44f8ea6
-  - enabled: 1
-    path: Assets/Scenes/Parcas-CS1.unity
-    guid: b61b4e01ccccc144f945512786bacafb
-  - enabled: 1
-    path: Assets/Scenes/Story-CS3.unity
-    guid: 50a8c5cab8d76aa4c973b71f3c86a6b1
-  - enabled: 1
-    path: Assets/Scenes/Story-CS2.unity
-    guid: f6096c56b0fc18e469f537b2c2a272da
-  - enabled: 1
-    path: Assets/Scenes/Story-CS1.unity
-    guid: 56326184fa555ed4aabcd4605458cb94
-  - enabled: 1
-    path: Assets/Scenes/Second Boss.unity
-    guid: 1e80e38fe9e315e468f440618f1ecb1c
-  - enabled: 1
-    path: Assets/Scenes/Third Boss.unity
-    guid: 784920bf7bd858f4f82e12aac99f5f76
   m_configObjects: {}

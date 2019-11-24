@@ -537,50 +537,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 490922902262341839, guid: 5e3a2cde6fe413c418419b7ad6d61f81,
+    - target: {fileID: 3664154470501340879, guid: 5e3a2cde6fe413c418419b7ad6d61f81,
         type: 3}
       propertyPath: textDisplay
       value: 
       objectReference: {fileID: 1782185477}
-    - target: {fileID: 490922902262341839, guid: 5e3a2cde6fe413c418419b7ad6d61f81,
+    - target: {fileID: 3664154470501340879, guid: 5e3a2cde6fe413c418419b7ad6d61f81,
         type: 3}
       propertyPath: transitionAnim
       value: 
       objectReference: {fileID: 6762785907782498950}
-    m_RemovedComponents:
-    - {fileID: 490922902262341839, guid: 5e3a2cde6fe413c418419b7ad6d61f81, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e3a2cde6fe413c418419b7ad6d61f81, type: 3}
---- !u!1 &3664154469271894796 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3664154470501340872, guid: 5e3a2cde6fe413c418419b7ad6d61f81,
-    type: 3}
-  m_PrefabInstance: {fileID: 3664154469271894795}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &3664154469271894797
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3664154469271894796}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80fb04ab086b7094fb8c4a0f28a18095, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textDisplay: {fileID: 1782185477}
-  sentences:
-  - "\xC1TROPOS: So you dare to challenge us?"
-  - "LAQU\xC9SIS:But be sure dear traveller"
-  - 'CLOTO: YOUR COURAGE WILL BE YOUR DOOM!'
-  - "\xC1TROPOS: But if you want to fight, let\xB4s do it."
-  - "LAQU\xC9SIS: So be ready to be challenged by our finest champions."
-  - 'CLOTO: Defeat them, and maybe you will be able to face us.'
-  - 'ALL: LET THE GAMES BEGIN!'
-  typingSpeed: 0.02
-  transitionAnim: {fileID: 6762785907782498950}
-  sceneToLoad: First
-  releaseSpaceBar: 0
 --- !u!1001 &5407200718995076586
 PrefabInstance:
   m_ObjectHideFlags: 0
