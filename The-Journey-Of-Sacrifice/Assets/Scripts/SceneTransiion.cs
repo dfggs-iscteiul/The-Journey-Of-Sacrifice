@@ -18,7 +18,6 @@ public class SceneTransiion : MonoBehaviour
     IEnumerator LoadScene()
     {
         transitionAnim.SetTrigger("FadeOut");
-        yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene(sceneToLoad);
         yield return new WaitForSeconds(3.5f);
         transitionAnim.SetTrigger("FadeIn");
