@@ -11,8 +11,16 @@ public class Parcas_CS2 : MonoBehaviour
     private int index;
     public float typingSpeed;
 
+    public GameObject Achlys;
+    public GameObject Erebus;
+    public GameObject Thanatos;
+    public GameObject Artmis;
+
+
     public Animator transitionAnim;
     public string sceneToLoad;
+    private string name = "";
+
 
     public bool releaseSpaceBar = false;
 
@@ -28,10 +36,36 @@ public class Parcas_CS2 : MonoBehaviour
     IEnumerator LoadScene()
     {
         transitionAnim.SetTrigger("FadeOut");
-        yield return new WaitForSeconds(1.5f);
-        SceneManager.LoadScene(sceneToLoad);
-        yield return new WaitForSeconds(3.5f);
+        yield return new WaitForSeconds(1.5f);        
+        var loading = SceneManager.LoadSceneAsync(sceneToLoad, LoadSceneMode.Additive);
+        yield return loading;
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneToLoad));
+        SceneManager.UnloadSceneAsync(SceneManager.GetSceneAt(0));
         transitionAnim.SetTrigger("FadeIn");
+
+        if (name == "ACHLYS")
+        {
+            Instantiate(Achlys, new Vector3(0, 6, 0), Quaternion.identity);
+            Debug.Log(name.ToString());
+        }
+        else if (name == "EREBUS")
+        {
+            Instantiate(Erebus, new Vector3(0, 6, 0), Quaternion.identity);
+            Debug.Log(name.ToString());
+
+        }
+        else if (name == "ARTMIS")
+        {
+            Instantiate(Artmis, new Vector3(0, 6, 0), Quaternion.identity);
+            Debug.Log(name.ToString());
+
+        }
+        else
+        {
+            Instantiate(Thanatos, new Vector3(0, 6, 0), Quaternion.identity);
+            Debug.Log(name.ToString());
+
+        }
     }
 
     public void NextSentence()
@@ -47,18 +81,18 @@ public class Parcas_CS2 : MonoBehaviour
         else if(index==2) {
             textDisplay.text = "";
             float choice = Mathf.Round((1 + 4 * Random.Range(0f,1f))*100f/100f);
-            string name = "";
             if (choice == 1)
             {
                 name = "ACHLYS";
+
             }
             else if (choice == 2)
             {
-                name = "EREBUS";
+                name = "ARTMIS";
             }
             else if (choice == 3)
             {
-                name = "HECATE";
+                name = "EREBUS";
             }
             else
             {
@@ -71,7 +105,8 @@ public class Parcas_CS2 : MonoBehaviour
         else
         {
             textDisplay.text = "";
-            StartCoroutine(LoadScene());    
+            StartCoroutine(LoadScene());
+          
         }
     }
 

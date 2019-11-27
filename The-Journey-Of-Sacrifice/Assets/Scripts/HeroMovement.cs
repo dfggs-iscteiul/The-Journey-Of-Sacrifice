@@ -2,8 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HeroMovement : MonoBehaviour
+public enum PlayerState
 {
+    walk,
+    attack,
+    interact
+}
+
+
+public class HeroMovement : MonoBehaviour
+
+{
+    public PlayerState currentState;
     public float speed;
     private Rigidbody2D rigidbody;
     Vector3 change;
@@ -22,10 +32,16 @@ public class HeroMovement : MonoBehaviour
         change = Vector3.zero;
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
-        if (change != Vector3.zero)
+        if (Input.GetButtonDown("Attack") & currentState!=PlayerState.attack)
+        {
+            StartCoroutine(AttackCo());
+
+        }
+        else if (change != Vector3.zero & currentState==PlayerState.walk)
         {
             move();
         }
+        
         else
         {
             animator.SetBool("moving", false);
@@ -34,11 +50,23 @@ public class HeroMovement : MonoBehaviour
        
     }
 
-    void move()
+    private IEnumerator AttackCo()
     {
-        rigidbody.MovePosition(transform.position + change * speed * Time.deltaTime);
-        animator.SetFloat("x", change.x);
-        animator.SetFloat("y", change.y);
-        animator.SetBool("moving", true);
+        animator.SetBool("attacking", true);
+        currentState = PlayerState.attack;
+        yield return null;
+        animator.SetBool("attacking", false);
+        yield return new WaitForSeconds(.33f);
+        currentState = PlayerState.walk;
     }
+
+    void move()
+        {
+            rigidbody.MovePosition(transform.position + change * speed * Time.deltaTime);
+            animator.SetFloat("x", change.x);
+            animator.SetFloat("y", change.y);
+            animator.SetBool("moving", true);
+        }
+
+    
 }

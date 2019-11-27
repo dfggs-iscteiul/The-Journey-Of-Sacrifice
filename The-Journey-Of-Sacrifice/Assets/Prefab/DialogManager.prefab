@@ -46,10 +46,15 @@ MonoBehaviour:
   textDisplay: {fileID: 0}
   sentences:
   - "\xC1TROPOS: It's time to meet your first enemy."
-  - "LAQU\xC9SIS: But this time we let CHANCE rule."
+  - "LAQU\xC9SIS: But this time we will let CHANCE rule."
   - 'CLOTO: So your next challenge will be with...'
   - 
   typingSpeed: 0.02
+  Achlys: {fileID: 3875951138445584164, guid: 00435fab48ebb304fa070e46f1e4dfd8, type: 3}
+  Erebus: {fileID: 6771260253146851223, guid: c86db71d63a32fb458a86c0720f6819c, type: 3}
+  Thanatos: {fileID: 3014125113488169787, guid: 751522eed12a05e458bd21ccae39d6e6,
+    type: 3}
+  Artmis: {fileID: 492742761620645502, guid: 6478db0396dcea142b9b4ad45c21629a, type: 3}
   transitionAnim: {fileID: 0}
   sceneToLoad: FirstBoss
   releaseSpaceBar: 0
