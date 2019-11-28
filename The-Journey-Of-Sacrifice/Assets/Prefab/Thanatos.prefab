@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3473784346701238255}
   - component: {fileID: 3590426573428073939}
   - component: {fileID: 1081292699984817155}
-  - component: {fileID: 114330381416952446}
+  - component: {fileID: 7449581619162241737}
   m_Layer: 0
   m_Name: Thanatos
   m_TagString: enemy
@@ -129,7 +129,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5777061, y: 2.0770054}
   m_EdgeRadius: 0
---- !u!114 &114330381416952446
+--- !u!114 &7449581619162241737
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,9 +138,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 7638966017782563687}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 610ada52eafc3a44ea1a2a4fbff761bc, type: 3}
+  m_Script: {fileID: 11500000, guid: 4688b07ef6121324fa08f9328da3cbdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  enemyName: 
-  baseAttack: 0
+  health: 2
+  enemyName: Thanatos
+  baseAttack: 1
+  moveSpeed: 1.5
+  target: {fileID: 0}
+  chaseRadius: 2
+  attackRadius: 1
+  homePosition: {fileID: 0}

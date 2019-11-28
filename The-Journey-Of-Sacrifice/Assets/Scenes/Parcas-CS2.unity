@@ -402,6 +402,30 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4163477399815999025, guid: 688bef9c4fa49de4cbd508fbd20efa6f,
         type: 3}
+    - target: {fileID: 490922902262341839, guid: 5e3a2cde6fe413c418419b7ad6d61f81,
+        type: 3}
+      propertyPath: Achlys
+      value: 
+      objectReference: {fileID: 8598662583238886711, guid: 00435fab48ebb304fa070e46f1e4dfd8,
+        type: 3}
+    - target: {fileID: 490922902262341839, guid: 5e3a2cde6fe413c418419b7ad6d61f81,
+        type: 3}
+      propertyPath: Erebus
+      value: 
+      objectReference: {fileID: 2407889882484256690, guid: c86db71d63a32fb458a86c0720f6819c,
+        type: 3}
+    - target: {fileID: 490922902262341839, guid: 5e3a2cde6fe413c418419b7ad6d61f81,
+        type: 3}
+      propertyPath: Thanatos
+      value: 
+      objectReference: {fileID: 7638966017782563687, guid: 751522eed12a05e458bd21ccae39d6e6,
+        type: 3}
+    - target: {fileID: 490922902262341839, guid: 5e3a2cde6fe413c418419b7ad6d61f81,
+        type: 3}
+      propertyPath: Artmis
+      value: 
+      objectReference: {fileID: 9091209800571539460, guid: 6478db0396dcea142b9b4ad45c21629a,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e3a2cde6fe413c418419b7ad6d61f81, type: 3}
 --- !u!114 &1916517291 stripped

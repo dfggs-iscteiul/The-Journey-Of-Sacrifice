@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5113129199867333177}
   - component: {fileID: 1429415428213552316}
   - component: {fileID: 6838350005354036798}
-  - component: {fileID: 114491785640256416}
+  - component: {fileID: 6740174294224044572}
   m_Layer: 0
   m_Name: Erebus
   m_TagString: enemy
@@ -129,7 +129,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.195849, y: 2.3793468}
   m_EdgeRadius: 0
---- !u!114 &114491785640256416
+--- !u!114 &6740174294224044572
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,9 +138,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2407889882484256690}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 610ada52eafc3a44ea1a2a4fbff761bc, type: 3}
+  m_Script: {fileID: 11500000, guid: 4688b07ef6121324fa08f9328da3cbdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  enemyName: 
-  baseAttack: 0
+  health: 2
+  enemyName: Erebus
+  baseAttack: 1
+  moveSpeed: 1.5
+  target: {fileID: 0}
+  chaseRadius: 2
+  attackRadius: 1
+  homePosition: {fileID: 0}
