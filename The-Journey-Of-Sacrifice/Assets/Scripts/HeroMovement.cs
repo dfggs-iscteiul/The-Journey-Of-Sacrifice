@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum PlayerState
 {
@@ -18,6 +19,9 @@ public class HeroMovement : MonoBehaviour
     private Rigidbody2D rigidbody;
     Vector3 change;
     private Animator animator;
+
+    public Animator transitionAnim;
+    public string sceneToLoad;
 
     public int actualDamage;
     public float multiplier = 1f;
@@ -43,17 +47,13 @@ public class HeroMovement : MonoBehaviour
         change = Vector3.zero;
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
-        Debug.Log("1 - "+currentState);
-        Debug.Log(Vector3.Distance(targetGO.GetComponent<Enemy>().transform.position, transform.position));
-        Debug.Log(targetGO.GetComponent<Enemy>().attackRadius);
-        Debug.Log(targetGO.GetComponent<Enemy>().enemyState);
 
-        if (currentState != PlayerState.attack && Vector3.Distance(targetGO.GetComponent<Enemy>().transform.position, transform.position) <= targetGO.GetComponent<Enemy>().attackRadius && targetGO.GetComponent<Enemy>().enemyState == Enemy.EnemyState.attack && !wasAttacked)
+        if (targetGO!=null && currentState != PlayerState.attack && Vector3.Distance(targetGO.GetComponent<Enemy>().transform.position, transform.position) <= targetGO.GetComponent<Enemy>().attackRadius && targetGO.GetComponent<Enemy>().enemyState == Enemy.EnemyState.attack && !wasAttacked)
         {
-            TakeDamage(targetGO.GetComponent<Enemy>().damage);
+            TakeDamage(targetGO.GetComponent<Enemy>().baseAttack);
             wasAttacked = true;
         }
-        else if (Input.GetButtonDown("Attack") & currentState!=PlayerState.attack)
+        else if (targetGO!= null && Input.GetButtonDown("Attack") & currentState!=PlayerState.attack)
         {
             StartCoroutine(AttackCo());
             wasAttacked = false;
@@ -108,8 +108,17 @@ public class HeroMovement : MonoBehaviour
         health -= damage;
         if (health <= 0)
         {
-            this.gameObject.SetActive(false);
+            StartCoroutine(LoadScene());
         }
+    }
+
+    IEnumerator LoadScene()
+    {
+        transitionAnim.SetTrigger("FadeOut");
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene(sceneToLoad);
+        yield return new WaitForSeconds(3.5f);
+        transitionAnim.SetTrigger("FadeIn");
     }
 
 

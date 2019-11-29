@@ -95,7 +95,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12a62e1380b001c45bbed65edeb88f01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentState: 0
   speed: 3
+  transitionAnim: {fileID: 8509708844075460086, guid: fbd2771dd84dd794fb38f3ff424b64c3,
+    type: 3}
+  sceneToLoad: 
+  actualDamage: 0
+  multiplier: 1
+  maxHealth: 1000
+  health: 0
+  targetGO: {fileID: 0}
 --- !u!50 &1442520905770266712
 Rigidbody2D:
   serializedVersion: 4

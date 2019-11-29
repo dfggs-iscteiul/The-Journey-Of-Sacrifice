@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour{
 
@@ -13,9 +14,8 @@ public class Enemy : MonoBehaviour{
     }
 
     public EnemyState enemyState;
-    public FloatValue maxHealth;
+    public int maxHealth;
     public float health;
-    public int extraHealth;
     public string enemyName;
     public int baseAttack;
     public float moveSpeed;
@@ -27,12 +27,13 @@ public class Enemy : MonoBehaviour{
 
     public GameObject targetGO;
 
-    public int damage;
+    public Animator transitionAnim;
+    public string sceneToLoad;
 
     // Start is called before the first frame update
     void Start()
     {
-        health = maxHealth.initialValue;
+        health = maxHealth;
         enemyState = EnemyState.idle;
         target = GameObject.FindWithTag("Player").transform;
         targetGO = GameObject.FindWithTag("Player");
@@ -41,6 +42,8 @@ public class Enemy : MonoBehaviour{
     // Update is called once per frame
     void Update()
     {
+        targetGO = GameObject.FindWithTag("Player");
+        target = GameObject.FindWithTag("Player").transform;
         checkDistance();
     }
 
@@ -71,7 +74,18 @@ public class Enemy : MonoBehaviour{
         health -= damage;
         if(health<=0)
         {
-            this.gameObject.SetActive(false);
+            StartCoroutine(LoadScene());
         }
+    }
+
+    IEnumerator LoadScene()
+    {
+        transitionAnim.SetTrigger("FadeOut");
+        yield return new WaitForSeconds(1.5f);
+        var loading = SceneManager.LoadSceneAsync(sceneToLoad, LoadSceneMode.Additive);
+        yield return loading;
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneToLoad));
+        SceneManager.UnloadSceneAsync(SceneManager.GetSceneAt(0));
+        transitionAnim.SetTrigger("FadeIn");
     }
 }

@@ -40,32 +40,37 @@ public class Parcas_CS2 : MonoBehaviour
         var loading = SceneManager.LoadSceneAsync(sceneToLoad, LoadSceneMode.Additive);
         yield return loading;
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneToLoad));
-        SceneManager.UnloadSceneAsync(SceneManager.GetSceneAt(0));
-        transitionAnim.SetTrigger("FadeIn");
+
+        Artmis.GetComponent<Enemy>().chaseRadius = 6;
+        Erebus.GetComponent<Enemy>().chaseRadius = 6;
+        Achlys.GetComponent<Enemy>().chaseRadius = 6;
+        Thanatos.GetComponent<Enemy>().chaseRadius = 6;
+
+        Achlys.GetComponent<Enemy>().sceneToLoad = "Parcas-FirstBossDefeated";
+        Erebus.GetComponent<Enemy>().sceneToLoad = "Parcas-FirstBossDefeated";
+        Artmis.GetComponent<Enemy>().sceneToLoad = "Parcas-FirstBossDefeated";
+        Thanatos.GetComponent<Enemy>().sceneToLoad = "Parcas-FirstBossDefeated";
+
 
         if (name == "ACHLYS")
         {
-            Instantiate(Achlys, new Vector3(0, 6, 0), Quaternion.identity);
-            Debug.Log(name.ToString());
+            Instantiate(Achlys,new Vector3(0,6,0),Quaternion.identity);
         }
         else if (name == "EREBUS")
         {
             Instantiate(Erebus, new Vector3(0, 6, 0), Quaternion.identity);
-            Debug.Log(name.ToString());
-
         }
         else if (name == "ARTMIS")
         {
             Instantiate(Artmis, new Vector3(0, 6, 0), Quaternion.identity);
-            Debug.Log(name.ToString());
-
         }
         else
         {
             Instantiate(Thanatos, new Vector3(0, 6, 0), Quaternion.identity);
-            Debug.Log(name.ToString());
-
         }
+        SceneManager.UnloadSceneAsync(SceneManager.GetSceneAt(0));
+        transitionAnim.SetTrigger("FadeIn");
+
     }
 
     public void NextSentence()

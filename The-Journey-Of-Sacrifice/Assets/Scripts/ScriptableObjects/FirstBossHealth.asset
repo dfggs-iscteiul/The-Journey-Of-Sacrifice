@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffc0126b1fe7ca24daea5ba8ba6c7b27, type: 3}
   m_Name: FirstBossHealth
   m_EditorClassIdentifier: 
-  initialValue: 0
+  initialValue: 400

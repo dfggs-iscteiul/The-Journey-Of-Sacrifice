@@ -141,11 +141,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4688b07ef6121324fa08f9328da3cbdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyState: 0
+  maxHealth: 600
   health: 2
   enemyName: Thanatos
-  baseAttack: 1
-  moveSpeed: 1.5
+  baseAttack: 75
+  moveSpeed: 2.5
   target: {fileID: 0}
-  chaseRadius: 2
+  chaseRadius: 6
   attackRadius: 1
   homePosition: {fileID: 0}
+  targetGO: {fileID: 0}
+  transitionAnim: {fileID: 8509708844075460086, guid: fbd2771dd84dd794fb38f3ff424b64c3,
+    type: 3}
+  sceneToLoad: 

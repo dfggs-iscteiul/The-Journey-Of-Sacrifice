@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 016ba8e96e25bc74786b71b3fa86c81a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - textDisplay: {instanceID: 0}
+  - Achlys: {instanceID: 0}
+  - Erebus: {instanceID: 0}
+  - Thanatos: {instanceID: 0}
+  - Artmis: {instanceID: 0}
+  - transitionAnim: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

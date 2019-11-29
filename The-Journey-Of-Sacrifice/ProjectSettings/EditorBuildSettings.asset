@@ -24,6 +24,30 @@ EditorBuildSettings:
     path: Assets/Scenes/Story-CS3.unity
     guid: 50a8c5cab8d76aa4c973b71f3c86a6b1
   - enabled: 1
+    path: Assets/Scenes/Parcas-HeroDeath2.unity
+    guid: 8a9b545e574b34f439b5ee353a6675ec
+  - enabled: 1
+    path: Assets/Scenes/Parcas-HeroDeath3.unity
+    guid: 90b5be389930f72469f926d86a428871
+  - enabled: 1
+    path: Assets/Scenes/Parcas-HeroDeath4.unity
+    guid: 704e73dabc1f50d4a9dcab21e85ef629
+  - enabled: 1
+    path: Assets/Scenes/Parcas-SecondBossDefeated.unity
+    guid: eca8380c19a002a408126538235e4688
+  - enabled: 1
+    path: Assets/Scenes/Parcas-ThirdBossDefeated.unity
+    guid: 7e14d85e975639c40b61fbe39c43da81
+  - enabled: 1
+    path: Assets/Scenes/Parcas_ReturningForthBoss.unity
+    guid: 6fcfca9e6eaf9b845a877f93a40a323a
+  - enabled: 1
+    path: Assets/Scenes/Parcas_ReturningSecondBoss.unity
+    guid: c23d8bc3868b9f048b5bb27a8a73f4cc
+  - enabled: 1
+    path: Assets/Scenes/Parcas_ReturningThirdBoss.unity
+    guid: cae0b435d7211bf4b9388006187444d2
+  - enabled: 1
     path: Assets/Scenes/Story-CS2.unity
     guid: f6096c56b0fc18e469f537b2c2a272da
   - enabled: 1
@@ -32,6 +56,21 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Second Boss.unity
     guid: 1e80e38fe9e315e468f440618f1ecb1c
+  - enabled: 1
+    path: Assets/Scenes/Forth Boss.unity
+    guid: 4677b5e38198c4247b7dc5053d3e71d4
+  - enabled: 1
+    path: Assets/Scenes/Parcas Arena.unity
+    guid: df6f1888b0f0f7d40b2273b3e3843605
+  - enabled: 1
+    path: Assets/Scenes/Parcas-FirstBossDefeated.unity
+    guid: 81c042949efe6d64f9da4012377161bd
+  - enabled: 1
+    path: Assets/Scenes/Parcas-HeroDeath1.unity
+    guid: 95e0b81121b6d134b8321a52bd0dd66f
+  - enabled: 1
+    path: Assets/Scenes/Parcas_ReturningFirstBoss.unity
+    guid: bcb8e6a64f53b8840b0a1dda513da651
   - enabled: 1
     path: Assets/Scenes/Third Boss.unity
     guid: 784920bf7bd858f4f82e12aac99f5f76
