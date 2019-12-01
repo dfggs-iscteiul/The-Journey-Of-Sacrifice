@@ -358,6 +358,7 @@ MonoBehaviour:
     type: 3}
   sceneToLoad: Third Boss
   releaseSpaceBar: 0
+  totem: {fileID: 1584382322421665423, guid: 0acdd6b9fc903fc49b3693a4a2a08021, type: 3}
 --- !u!4 &3664154469631581687
 Transform:
   m_ObjectHideFlags: 0

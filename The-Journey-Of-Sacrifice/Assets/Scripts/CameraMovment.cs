@@ -16,8 +16,8 @@ public class CameraMovment : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        float y = Mathf.Clamp(target.position.y, (float)(-11.59), (float)(14.36));
-        float x = Mathf.Clamp(target.position.x, (float)(-12.49), (float)(11.53));
+        float y = Mathf.Clamp(target.position.y, (float)(-11.7), (float)(14.36));
+        float x = Mathf.Clamp(target.position.x, (float)(-16.9), (float)(14.7));
 
         if (transform.position!=target.position)
         {

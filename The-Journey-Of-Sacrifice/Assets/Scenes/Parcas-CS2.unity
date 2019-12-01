@@ -345,7 +345,7 @@ MonoBehaviour:
   textDisplay: {fileID: 5407200719333120518}
   sentences:
   - "\xC1tropos: Ready to meet your first challenger?"
-  - "Laqu\xE9sis: We will let Change determine your fate."
+  - "Laqu\xE9sis: We will let CHANCE determine your fate."
   - 'Cloto: So your first challenger will be...'
   - 
   typingSpeed: 0.02
