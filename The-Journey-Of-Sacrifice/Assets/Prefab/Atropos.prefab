@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 909173970998159996}
   - component: {fileID: 7816520807924650116}
   - component: {fileID: 3164301959532734294}
+  - component: {fileID: 114486427636517500}
   m_Layer: 0
   m_Name: Atropos
   m_TagString: enemy
@@ -128,3 +129,30 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.9284682, y: 2.4578595}
   m_EdgeRadius: 0
+--- !u!114 &114486427636517500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6600355300417740106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56574c5bd9f9f00469ed93a9f0451f4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Atropos
+  maxY: -0.8
+  minY: -14.3
+  enemyState: 0
+  maxHealth: 1000
+  health: 0
+  baseAttack: 400
+  moveSpeed: 2.5
+  target: {fileID: 0}
+  chaseRadius: 4
+  attackRadius: 1
+  targetGO: {fileID: 0}
+  transitionAnim: {fileID: 8509708844075460086, guid: fbd2771dd84dd794fb38f3ff424b64c3,
+    type: 3}
+  minion: {fileID: 8956261041401099266, guid: 2105945e4a0aab948b6c216a0048bbeb, type: 3}

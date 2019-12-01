@@ -24,6 +24,8 @@ public class Parcas_CS5 : MonoBehaviour
 
     public bool releaseSpaceBar = false;
 
+    public GameObject totem;
+
     IEnumerator Type()
     {
         yield return new WaitForSeconds(1f);
@@ -62,22 +64,23 @@ public class Parcas_CS5 : MonoBehaviour
         Thanatos.GetComponent<Enemy>().baseAttack = 300;
         Thanatos.GetComponent<Enemy>().sceneToLoad = "Parcas-ForthBossDefeated";
 
+        GameObject.FindGameObjectWithTag("totem").transform.position = new Vector3(-0.64f, 1.36f);
 
         if (name == "ACHLYS")
         {
-            Instantiate(Achlys,new Vector3(0,6,0),Quaternion.identity);
+            Instantiate(Achlys,new Vector3(0,1.36f,0),Quaternion.identity);
         }
         else if (name == "EREBUS")
         {
-            Instantiate(Erebus, new Vector3(0, 6, 0), Quaternion.identity);
+            Instantiate(Erebus, new Vector3(0, 1.36f, 0), Quaternion.identity);
         }
         else if (name == "ARTMIS")
         {
-            Instantiate(Artmis, new Vector3(0, 6, 0), Quaternion.identity);
+            Instantiate(Artmis, new Vector3(0, 1.36f, 0), Quaternion.identity);
         }
         else
         {
-            Instantiate(Thanatos, new Vector3(0, 6, 0), Quaternion.identity);
+            Instantiate(Thanatos, new Vector3(0, 1.36f, 0), Quaternion.identity);
         }
         SceneManager.UnloadSceneAsync(SceneManager.GetSceneAt(0));
         transitionAnim.SetTrigger("FadeIn");
@@ -131,6 +134,7 @@ public class Parcas_CS5 : MonoBehaviour
     void Start()
     {
         StartCoroutine(Type());
+
     }
 
     // Update is called once per frame

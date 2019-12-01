@@ -29,6 +29,7 @@ public class HeroMovement : MonoBehaviour
     public int health;
 
     public GameObject targetGO;
+    public GameObject[] targetsGO;
 
     bool wasAttacked = false;
 
@@ -37,7 +38,6 @@ public class HeroMovement : MonoBehaviour
     {
         rigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        targetGO = GameObject.FindWithTag("enemy");
         health = maxHealth;
     }
 
@@ -47,12 +47,34 @@ public class HeroMovement : MonoBehaviour
         change = Vector3.zero;
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
+        targetsGO = GameObject.FindGameObjectsWithTag("enemy");
 
-        if (targetGO!=null && currentState != PlayerState.attack && Vector3.Distance(targetGO.GetComponent<Enemy>().transform.position, transform.position) <= targetGO.GetComponent<Enemy>().attackRadius && targetGO.GetComponent<Enemy>().enemyState == Enemy.EnemyState.attack && !wasAttacked)
+        if (targetsGO.Length == 1)
+            targetGO = targetsGO[0];
+        else
         {
-            TakeDamage(targetGO.GetComponent<Enemy>().baseAttack);
-            wasAttacked = true;
+            targetGO = targetsGO[0];
+            for (int i = 1; i < targetsGO.Length; i++)
+            {
+                if (Vector3.Distance(transform.position, targetsGO[i].transform.position) < Vector3.Distance(transform.position, targetGO.transform.position))
+                {
+                    targetGO = targetsGO[i];
+                }
+            }
         }
+        
+            if (targetGO.GetComponent<Parcas>() != null && targetGO != null && currentState != PlayerState.attack && Vector3.Distance(targetGO.GetComponent<Parcas>().transform.position, transform.position) <= targetGO.GetComponent<Parcas>().attackRadius && targetGO.GetComponent<Parcas>().enemyState == Parcas.EnemyState.attack && !wasAttacked)
+            {
+                TakeDamage(targetGO.GetComponent<Parcas>().baseAttack);
+                wasAttacked = true;
+            } 
+       
+            else if (targetGO != null && currentState != PlayerState.attack && Vector3.Distance(targetGO.GetComponent<Enemy>().transform.position, transform.position) <= targetGO.GetComponent<Enemy>().attackRadius && targetGO.GetComponent<Enemy>().enemyState == Enemy.EnemyState.attack && !wasAttacked)
+            {
+                TakeDamage(targetGO.GetComponent<Enemy>().baseAttack);
+                wasAttacked = true;
+            }
+   
         else if (targetGO!= null && Input.GetButtonDown("Attack") & currentState!=PlayerState.attack)
         {
             StartCoroutine(AttackCo());

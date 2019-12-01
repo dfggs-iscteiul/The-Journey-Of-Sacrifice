@@ -24,6 +24,8 @@ public class Parcas_CS2 : MonoBehaviour
 
     public bool releaseSpaceBar = false;
 
+    public GameObject totem;
+
     IEnumerator Type()
     {
         yield return new WaitForSeconds(1f);
@@ -41,6 +43,8 @@ public class Parcas_CS2 : MonoBehaviour
         yield return loading;
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneToLoad));
 
+        GameObject.Find("Hero").GetComponent<HeroMovement>().sceneToLoad = "Parcas-HeroDeath1";
+
         Artmis.GetComponent<Enemy>().chaseRadius = 6;
         Erebus.GetComponent<Enemy>().chaseRadius = 6;
         Achlys.GetComponent<Enemy>().chaseRadius = 6;
@@ -51,6 +55,7 @@ public class Parcas_CS2 : MonoBehaviour
         Artmis.GetComponent<Enemy>().sceneToLoad = "Parcas-FirstBossDefeated";
         Thanatos.GetComponent<Enemy>().sceneToLoad = "Parcas-FirstBossDefeated";
 
+        GameObject.FindGameObjectWithTag("totem").transform.position = new Vector3(0f, 16.2f);
 
         if (name == "ACHLYS")
         {
@@ -131,4 +136,5 @@ public class Parcas_CS2 : MonoBehaviour
             NextSentence();
         }
     }
+
 }

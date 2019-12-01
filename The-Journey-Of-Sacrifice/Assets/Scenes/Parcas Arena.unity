@@ -2357,7 +2357,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 81154223}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.53, y: 14.36, z: -10}
+  m_LocalPosition: {x: 7.58, y: 15.09, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2474,7 +2474,7 @@ PrefabInstance:
     - target: {fileID: 2421495150457386680, guid: 0b1000208b99d204c8bdd997a12dd929,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2421495150457386680, guid: 0b1000208b99d204c8bdd997a12dd929,
         type: 3}
@@ -2493,38 +2493,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b1000208b99d204c8bdd997a12dd929, type: 3}
---- !u!1 &199405094 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3519356454557248222, guid: 0b1000208b99d204c8bdd997a12dd929,
-    type: 3}
-  m_PrefabInstance: {fileID: 199405093}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &199405095
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 199405094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4688b07ef6121324fa08f9328da3cbdd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyState: 0
-  maxHealth: 1000
-  health: 0
-  enemyName: 
-  baseAttack: 400
-  moveSpeed: 2.5
-  target: {fileID: 0}
-  chaseRadius: 10
-  attackRadius: 1
-  homePosition: {fileID: 0}
-  targetGO: {fileID: 0}
-  transitionAnim: {fileID: 8509708844075460086, guid: fbd2771dd84dd794fb38f3ff424b64c3,
-    type: 3}
-  sceneToLoad: 
 --- !u!1 &316542666
 GameObject:
   m_ObjectHideFlags: 0
@@ -3790,7 +3758,7 @@ PrefabInstance:
     - target: {fileID: 1442520905770266717, guid: 25295acb1bfcc85419ab24094e94c1fe,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1442520905770266717, guid: 25295acb1bfcc85419ab24094e94c1fe,
         type: 3}
@@ -3816,6 +3784,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 2.8610744
+      objectReference: {fileID: 0}
+    - target: {fileID: 1442520905770266715, guid: 25295acb1bfcc85419ab24094e94c1fe,
+        type: 3}
+      propertyPath: sceneToLoad
+      value: HeroDeath5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25295acb1bfcc85419ab24094e94c1fe, type: 3}
@@ -3875,7 +3848,7 @@ PrefabInstance:
     - target: {fileID: 8180846132318220118, guid: c65f663eca4eecc448438b477f7de31f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8180846132318220118, guid: c65f663eca4eecc448438b477f7de31f,
         type: 3}
@@ -3899,38 +3872,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c65f663eca4eecc448438b477f7de31f, type: 3}
---- !u!1 &866471478 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6600355300417740106, guid: c65f663eca4eecc448438b477f7de31f,
-    type: 3}
-  m_PrefabInstance: {fileID: 866471477}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &866471479
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 866471478}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4688b07ef6121324fa08f9328da3cbdd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyState: 0
-  maxHealth: 1000
-  health: 0
-  enemyName: 
-  baseAttack: 400
-  moveSpeed: 2.5
-  target: {fileID: 0}
-  chaseRadius: 10
-  attackRadius: 1
-  homePosition: {fileID: 0}
-  targetGO: {fileID: 0}
-  transitionAnim: {fileID: 8509708844075460086, guid: fbd2771dd84dd794fb38f3ff424b64c3,
-    type: 3}
-  sceneToLoad: 
 --- !u!1001 &1136618267
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20640,6 +20581,9 @@ GameObject:
   - component: {fileID: 1671661295}
   - component: {fileID: 1671661297}
   - component: {fileID: 1671661296}
+  - component: {fileID: 1671661300}
+  - component: {fileID: 1671661299}
+  - component: {fileID: 1671661298}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Untagged
@@ -20715,24 +20659,6 @@ Tilemap:
   m_GameObject: {fileID: 1671661294}
   m_Enabled: 1
   m_Tiles:
-  - first: {x: -4, y: -15, z: 0}
-    second:
-      m_TileIndex: 13
-      m_TileSpriteIndex: 13
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_ObjectToInstantiate: {fileID: 0}
-      m_TileFlags: 1
-      m_ColliderType: 1
-  - first: {x: -3, y: -15, z: 0}
-    second:
-      m_TileIndex: 13
-      m_TileSpriteIndex: 13
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_ObjectToInstantiate: {fileID: 0}
-      m_TileFlags: 1
-      m_ColliderType: 1
   - first: {x: -10, y: -14, z: 0}
     second:
       m_TileIndex: 13
@@ -20913,15 +20839,6 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
-  - first: {x: 10, y: -14, z: 0}
-    second:
-      m_TileIndex: 13
-      m_TileSpriteIndex: 13
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_ObjectToInstantiate: {fileID: 0}
-      m_TileFlags: 1
-      m_ColliderType: 1
   - first: {x: -10, y: -13, z: 0}
     second:
       m_TileIndex: 13
@@ -21094,15 +21011,6 @@ Tilemap:
       m_TileFlags: 1
       m_ColliderType: 1
   - first: {x: 9, y: -13, z: 0}
-    second:
-      m_TileIndex: 13
-      m_TileSpriteIndex: 13
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_ObjectToInstantiate: {fileID: 0}
-      m_TileFlags: 1
-      m_ColliderType: 1
-  - first: {x: 10, y: -13, z: 0}
     second:
       m_TileIndex: 13
       m_TileSpriteIndex: 13
@@ -21823,15 +21731,6 @@ Tilemap:
       m_TileFlags: 1
       m_ColliderType: 1
   - first: {x: 9, y: -9, z: 0}
-    second:
-      m_TileIndex: 13
-      m_TileSpriteIndex: 13
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_ObjectToInstantiate: {fileID: 0}
-      m_TileFlags: 1
-      m_ColliderType: 1
-  - first: {x: 10, y: -9, z: 0}
     second:
       m_TileIndex: 13
       m_TileSpriteIndex: 13
@@ -22582,42 +22481,6 @@ Tilemap:
     second:
       m_TileIndex: 14
       m_TileSpriteIndex: 14
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_ObjectToInstantiate: {fileID: 0}
-      m_TileFlags: 1
-      m_ColliderType: 1
-  - first: {x: -7, y: -4, z: 0}
-    second:
-      m_TileIndex: 13
-      m_TileSpriteIndex: 13
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_ObjectToInstantiate: {fileID: 0}
-      m_TileFlags: 1
-      m_ColliderType: 1
-  - first: {x: -6, y: -4, z: 0}
-    second:
-      m_TileIndex: 13
-      m_TileSpriteIndex: 13
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_ObjectToInstantiate: {fileID: 0}
-      m_TileFlags: 1
-      m_ColliderType: 1
-  - first: {x: -5, y: -4, z: 0}
-    second:
-      m_TileIndex: 13
-      m_TileSpriteIndex: 13
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_ObjectToInstantiate: {fileID: 0}
-      m_TileFlags: 1
-      m_ColliderType: 1
-  - first: {x: 2, y: -4, z: 0}
-    second:
-      m_TileIndex: 13
-      m_TileSpriteIndex: 13
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -25296,15 +25159,6 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
-  - first: {x: -3, y: 11, z: 0}
-    second:
-      m_TileIndex: 13
-      m_TileSpriteIndex: 13
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_ObjectToInstantiate: {fileID: 0}
-      m_TileFlags: 1
-      m_ColliderType: 1
   - first: {x: 2, y: 11, z: 0}
     second:
       m_TileIndex: 13
@@ -26593,7 +26447,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 3fb7489dd1fe27646ac5f15dce28f9f5, type: 2}
   - m_RefCount: 7
     m_Data: {fileID: 11400000, guid: f1effa92c47d1204db7cd117b2dee46d, type: 2}
-  - m_RefCount: 576
+  - m_RefCount: 566
     m_Data: {fileID: 11400000, guid: 80a9ed156b067e848bd8cba3596cdde8, type: 2}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: c4bb14df96b066e4682e19af1a804ba6, type: 2}
@@ -26630,7 +26484,7 @@ Tilemap:
     m_Data: {fileID: 21300326, guid: 5052b548498096f49adfbb912fe0880e, type: 3}
   - m_RefCount: 7
     m_Data: {fileID: 21300322, guid: 5052b548498096f49adfbb912fe0880e, type: 3}
-  - m_RefCount: 576
+  - m_RefCount: 566
     m_Data: {fileID: 21300324, guid: 5052b548498096f49adfbb912fe0880e, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 21300292, guid: 5052b548498096f49adfbb912fe0880e, type: 3}
@@ -26641,7 +26495,7 @@ Tilemap:
   - m_RefCount: 2
     m_Data: {fileID: 21300328, guid: 5052b548498096f49adfbb912fe0880e, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 650
+  - m_RefCount: 640
     m_Data:
       e00: 1
       e01: 0
@@ -26660,7 +26514,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 650
+  - m_RefCount: 640
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -26685,6 +26539,136 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!66 &1671661298
+CompositeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671661294}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_GeometryType: 0
+  m_GenerationType: 0
+  m_EdgeRadius: 0
+  m_ColliderPaths:
+  - m_Collider: {fileID: 1671661300}
+    m_ColliderPaths:
+    - - X: 90000000
+        Y: -30000000
+      - X: 90000000
+        Y: 40000000
+      - X: 100000000
+        Y: 40000000
+      - X: 100000000
+        Y: 50000000
+      - X: 220000000
+        Y: 50000000
+      - X: 220000000
+        Y: 150000000
+      - X: 20000000
+        Y: 150000000
+      - X: 20000000
+        Y: 50000000
+      - X: 70000000
+        Y: 50000000
+      - X: 70000000
+        Y: 40000000
+      - X: 80000000
+        Y: 40000000
+      - X: 80000000
+        Y: -30000000
+      - X: 70000000
+        Y: -30000000
+      - X: 70000000
+        Y: -40000000
+      - X: -70000000
+        Y: -40000000
+      - X: -70000000
+        Y: 50000000
+      - X: -30000000
+        Y: 50000000
+      - X: -30000000
+        Y: 150000000
+      - X: -230000000
+        Y: 150000000
+      - X: -230000000
+        Y: 50000000
+      - X: -100000000
+        Y: 50000000
+      - X: -100000000
+        Y: -140000000
+      - X: 100000000
+        Y: -140000000
+      - X: 100000000
+        Y: -30000000
+  m_CompositePaths:
+    m_Paths:
+    - - {x: 10, y: -3}
+      - {x: 9, y: -3}
+      - {x: 9, y: 4}
+      - {x: 10, y: 4}
+      - {x: 10, y: 5}
+      - {x: 22, y: 5}
+      - {x: 22, y: 15}
+      - {x: 2, y: 15}
+      - {x: 2, y: 5}
+      - {x: 7, y: 5}
+      - {x: 7, y: 4}
+      - {x: 8, y: 4}
+      - {x: 8, y: -3}
+      - {x: 7, y: -3}
+      - {x: 7, y: -4}
+      - {x: -7, y: -4}
+      - {x: -7, y: 5}
+      - {x: -3, y: 5}
+      - {x: -3, y: 15}
+      - {x: -23, y: 15}
+      - {x: -23, y: 5}
+      - {x: -10, y: 5}
+      - {x: -10, y: -14}
+      - {x: 10, y: -14}
+  m_VertexDistance: 0.0005
+--- !u!50 &1671661299
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671661294}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!19719996 &1671661300
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671661294}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 1
+  m_Offset: {x: 0, y: 0}
 --- !u!1001 &1994958544
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26754,35 +26738,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49b394f069f42474a98a405a76d8a2c0, type: 3}
---- !u!1 &1994958545 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9050278249609114948, guid: 49b394f069f42474a98a405a76d8a2c0,
-    type: 3}
-  m_PrefabInstance: {fileID: 1994958544}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1994958546
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1994958545}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4688b07ef6121324fa08f9328da3cbdd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyState: 0
-  maxHealth: 1000
-  health: 0
-  enemyName: 
-  baseAttack: 400
-  moveSpeed: 2.5
-  target: {fileID: 0}
-  chaseRadius: 10
-  attackRadius: 1
-  homePosition: {fileID: 0}
-  targetGO: {fileID: 0}
-  transitionAnim: {fileID: 8509708844075460086, guid: fbd2771dd84dd794fb38f3ff424b64c3,
-    type: 3}
-  sceneToLoad: 
