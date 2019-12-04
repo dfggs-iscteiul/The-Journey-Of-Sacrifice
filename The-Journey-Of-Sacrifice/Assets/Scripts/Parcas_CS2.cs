@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
+
 public class Parcas_CS2 : MonoBehaviour
 {
     public TextMeshProUGUI textDisplay;
@@ -11,10 +12,13 @@ public class Parcas_CS2 : MonoBehaviour
     private int index;
     public float typingSpeed;
 
+    public GameObject hero;
+
     public GameObject Achlys;
     public GameObject Erebus;
     public GameObject Thanatos;
     public GameObject Artmis;
+    public GameObject Hero;
 
 
     public Animator transitionAnim;
@@ -42,8 +46,7 @@ public class Parcas_CS2 : MonoBehaviour
         var loading = SceneManager.LoadSceneAsync(sceneToLoad, LoadSceneMode.Additive);
         yield return loading;
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneToLoad));
-
-        GameObject.Find("Hero").GetComponent<HeroMovement>().sceneToLoad = "Parcas-HeroDeath1";
+        GameObject.FindWithTag("Player").GetComponent<HeroMovement>().sceneToLoad = "Parcas-HeroDeath1";
 
         Artmis.GetComponent<Enemy>().chaseRadius = 6;
         Erebus.GetComponent<Enemy>().chaseRadius = 6;
@@ -73,6 +76,7 @@ public class Parcas_CS2 : MonoBehaviour
         {
             Instantiate(Thanatos, new Vector3(0, 6, 0), Quaternion.identity);
         }
+        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(0.06f, -10.55f);
         SceneManager.UnloadSceneAsync(SceneManager.GetSceneAt(0));
         transitionAnim.SetTrigger("FadeIn");
 
@@ -124,6 +128,11 @@ public class Parcas_CS2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Hero = GameObject.FindGameObjectWithTag("Player");
+        if (Hero != null)
+        {
+            GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-15, 0);
+        }
         StartCoroutine(Type());
     }
 

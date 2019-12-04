@@ -15,6 +15,7 @@ public class Parcas_CS4 : MonoBehaviour
     public GameObject Erebus;
     public GameObject Thanatos;
     public GameObject Artmis;
+    public GameObject Hero;
 
 
     public Animator transitionAnim;
@@ -41,8 +42,17 @@ public class Parcas_CS4 : MonoBehaviour
         yield return new WaitForSeconds(1.5f);        
         var loading = SceneManager.LoadSceneAsync(sceneToLoad, LoadSceneMode.Additive);
         yield return loading;
+        int sp = GameObject.Find("Hero").GetComponent<HeroMovement>().specialAttack;
+        int lf = GameObject.Find("Hero").GetComponent<HeroMovement>().maxHealth;
+        float mt = GameObject.Find("Hero").GetComponent<HeroMovement>().multiplier;
+        int dm = GameObject.Find("Hero").GetComponent<HeroMovement>().actualDamage;
+
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneToLoad));
 
+        GameObject.Find("Hero").GetComponent<HeroMovement>().specialAttack = sp;
+        GameObject.Find("Hero").GetComponent<HeroMovement>().maxHealth = lf;
+        GameObject.Find("Hero").GetComponent<HeroMovement>().multiplier = mt;
+        GameObject.Find("Hero").GetComponent<HeroMovement>().actualDamage = dm;
         GameObject.Find("Hero").GetComponent<HeroMovement>().sceneToLoad = "Parcas-HeroDeath3";
 
         Achlys.GetComponent<Enemy>().maxHealth = Achlys.GetComponent<Enemy>().maxHealth + 200;
@@ -82,6 +92,9 @@ public class Parcas_CS4 : MonoBehaviour
         {
             Instantiate(Thanatos, new Vector3(0, 4, 0), Quaternion.identity);
         }
+
+        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(0.00f, -12.13f);
+
         SceneManager.UnloadSceneAsync(SceneManager.GetSceneAt(0));
         transitionAnim.SetTrigger("FadeIn");
 
@@ -133,8 +146,12 @@ public class Parcas_CS4 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Hero = GameObject.FindGameObjectWithTag("Player");
+        if (Hero != null)
+        {
+            GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-15, 0);
+        }
         StartCoroutine(Type());
-
     }
 
     // Update is called once per frame

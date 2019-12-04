@@ -16,6 +16,8 @@ public class Parcas_CS1 : MonoBehaviour
 
     public bool releaseSpaceBar = false;
 
+    public GameObject hero;
+
     IEnumerator Type()
     {
         yield return new WaitForSeconds(1f);
@@ -29,9 +31,31 @@ public class Parcas_CS1 : MonoBehaviour
     {
         transitionAnim.SetTrigger("FadeOut");
         yield return new WaitForSeconds(1.5f);
-        SceneManager.LoadScene(sceneToLoad);
-        yield return new WaitForSeconds(3.5f);
+        var loading = SceneManager.LoadSceneAsync(sceneToLoad, LoadSceneMode.Additive);
+        yield return loading;
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneToLoad));
+        Instantiate(hero, new Vector3(-0.46f,-1.06f), Quaternion.identity);
+        int special = (int)Mathf.Floor(1 + 4 * Random.Range(0f, 1f));
+        if (special == 1)
+        {
+            hero.GetComponent<HeroMovement>().specialAttack = 1;
+        }
+        if (special == 2)
+        {
+            hero.GetComponent<HeroMovement>().specialAttack = 2;
+        }
+        if (special == 3)
+        {
+           hero.GetComponent<HeroMovement>().specialAttack = 3;
+        }
+        if (special == 4)
+        {
+            hero.GetComponent<HeroMovement>().specialAttack = 4;
+        }
+
+        SceneManager.UnloadSceneAsync(SceneManager.GetSceneAt(0));
         transitionAnim.SetTrigger("FadeIn");
+
     }
 
     public void NextSentence()
@@ -54,6 +78,7 @@ public class Parcas_CS1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-15, 0);
         StartCoroutine(Type());
     }
 

@@ -759,7 +759,7 @@ MonoBehaviour:
   sentences:
   - "\xC1tropos: Seems that we won!"
   - "Laqu\xE9sis: But let's repeat your fate."
-  - 'Cloto: Because we love a good loss!'
+  - 'Cloto: Because we love to win!'
   typingSpeed: 0.02
   transitionAnim: {fileID: 8509708844075460086, guid: fbd2771dd84dd794fb38f3ff424b64c3,
     type: 3}

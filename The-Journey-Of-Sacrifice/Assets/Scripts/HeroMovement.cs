@@ -33,6 +33,13 @@ public class HeroMovement : MonoBehaviour
 
     bool wasAttacked = false;
 
+    public GameObject fire;
+    public GameObject water;
+    public GameObject rock;
+    public GameObject leaf;
+
+    public int specialAttack;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,7 +57,52 @@ public class HeroMovement : MonoBehaviour
         targetsGO = GameObject.FindGameObjectsWithTag("enemy");
 
         if (targetsGO.Length == 1)
-            targetGO = targetsGO[0];
+        {
+             targetGO = targetsGO[0];
+
+
+            if (targetGO.GetComponent<Parcas>() != null && targetGO != null && currentState != PlayerState.attack && Vector3.Distance(targetGO.GetComponent<Parcas>().transform.position, transform.position) <= targetGO.GetComponent<Parcas>().attackRadius && targetGO.GetComponent<Parcas>().enemyState == Parcas.EnemyState.attack && !wasAttacked)
+            {
+                TakeDamage(targetGO.GetComponent<Parcas>().baseAttack);
+                wasAttacked = true;
+            }
+
+            else if (targetGO.GetComponent<Parcas>() == null && targetGO != null && currentState != PlayerState.attack && Vector3.Distance(targetGO.GetComponent<Enemy>().transform.position, transform.position) <= targetGO.GetComponent<Enemy>().attackRadius && targetGO.GetComponent<Enemy>().enemyState == Enemy.EnemyState.attack && !wasAttacked)
+            {
+                TakeDamage(targetGO.GetComponent<Enemy>().baseAttack);
+                wasAttacked = true;
+            }
+
+            else if (targetGO != null && Input.GetButtonDown("Attack") & currentState != PlayerState.attack)
+            {
+                animator.SetBool("attacking", true);
+                StartCoroutine(AttackCo());
+                wasAttacked = false;
+            }
+            else if (change != Vector3.zero & currentState == PlayerState.walk)
+            {
+                move();
+            }
+            else
+            {
+                animator.SetBool("moving", false);
+            }
+        }
+           
+        else if(targetsGO.Length == 0)
+        {
+            targetGO = null;
+
+            if (change != Vector3.zero & currentState == PlayerState.walk)
+            {
+                move();
+            }
+            else
+            {
+                animator.SetBool("moving", false);
+            }
+        }
+
         else
         {
             targetGO = targetsGO[0];
@@ -61,44 +113,47 @@ public class HeroMovement : MonoBehaviour
                     targetGO = targetsGO[i];
                 }
             }
-        }
-        
+
             if (targetGO.GetComponent<Parcas>() != null && targetGO != null && currentState != PlayerState.attack && Vector3.Distance(targetGO.GetComponent<Parcas>().transform.position, transform.position) <= targetGO.GetComponent<Parcas>().attackRadius && targetGO.GetComponent<Parcas>().enemyState == Parcas.EnemyState.attack && !wasAttacked)
             {
                 TakeDamage(targetGO.GetComponent<Parcas>().baseAttack);
                 wasAttacked = true;
-            } 
-       
-            else if (targetGO != null && currentState != PlayerState.attack && Vector3.Distance(targetGO.GetComponent<Enemy>().transform.position, transform.position) <= targetGO.GetComponent<Enemy>().attackRadius && targetGO.GetComponent<Enemy>().enemyState == Enemy.EnemyState.attack && !wasAttacked)
+            }
+
+            else if (targetGO.GetComponent<Parcas>() == null && targetGO != null && currentState != PlayerState.attack && Vector3.Distance(targetGO.GetComponent<Enemy>().transform.position, transform.position) <= targetGO.GetComponent<Enemy>().attackRadius && targetGO.GetComponent<Enemy>().enemyState == Enemy.EnemyState.attack && !wasAttacked)
             {
                 TakeDamage(targetGO.GetComponent<Enemy>().baseAttack);
                 wasAttacked = true;
             }
-   
-        else if (targetGO!= null && Input.GetButtonDown("Attack") & currentState!=PlayerState.attack)
-        {
-            StartCoroutine(AttackCo());
-            wasAttacked = false;
+
+            else if (targetGO != null && Input.GetButtonDown("Attack") & currentState != PlayerState.attack)
+            {
+                animator.SetBool("attacking", true);
+                StartCoroutine(AttackCo());
+                wasAttacked = false;
+            }
+            else if (change != Vector3.zero & currentState == PlayerState.walk)
+            {
+                move();
+            }
+            else
+            {
+                animator.SetBool("moving", false);
+            }
         }
-        else if (change != Vector3.zero & currentState==PlayerState.walk)
-        {
-            move();
-        }
-        else
-        {
-            animator.SetBool("moving", false);
-        }
+
         
        
     }
 
     private IEnumerator AttackCo()
     {
-        animator.SetBool("attacking", true);
         yield return null;
         currentState = PlayerState.attack;
         generateDamage();
+        yield return null;
         animator.SetBool("attacking", false);
+        animator.SetBool("special", false); ;
         currentState = PlayerState.walk;
     }
 
@@ -122,6 +177,36 @@ public class HeroMovement : MonoBehaviour
                 {
                     actualDamage=(int)((50 + 8 * p1 * Mathf.Sqrt(-2 * Mathf.Log(p) / p))*multiplier);
                 }
+            int special = (int)Mathf.Floor(1 + 4 * Random.Range(0f, 1f));
+            if (special == 1)
+            {
+                animator.SetBool("special", true);
+                
+                if (specialAttack == 1)
+                {
+
+                    Instantiate(leaf, transform.position, Quaternion.identity);
+                    actualDamage += 50;
+
+                }
+                else if (specialAttack == 2)
+                {
+                    Instantiate(fire, transform.position, Quaternion.identity);
+                    actualDamage += 50;
+
+                }
+                else if (specialAttack == 3)
+                {
+                    Instantiate(water, transform.position, Quaternion.identity);
+                    actualDamage += 50;
+
+                }
+                else if (specialAttack == 4)
+                {
+                    Instantiate(rock, transform.position, Quaternion.identity);
+                    actualDamage += 50;
+                }
+            }
         }
     }
 
@@ -138,9 +223,36 @@ public class HeroMovement : MonoBehaviour
     {
         transitionAnim.SetTrigger("FadeOut");
         yield return new WaitForSeconds(1.5f);
-        SceneManager.LoadScene(sceneToLoad);
-        yield return new WaitForSeconds(3.5f);
+        var loading = SceneManager.LoadSceneAsync(sceneToLoad, LoadSceneMode.Additive);
+        yield return loading;
+        int sp = GameObject.Find("Hero").GetComponent<HeroMovement>().specialAttack;
+        int lf = GameObject.Find("Hero").GetComponent<HeroMovement>().maxHealth;
+        float mt = GameObject.Find("Hero").GetComponent<HeroMovement>().multiplier;
+        int dm = GameObject.Find("Hero").GetComponent<HeroMovement>().actualDamage;
+
+
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneToLoad));
+
+        GameObject.Find("Hero").GetComponent<HeroMovement>().sceneToLoad = "Parcas-HeroDeath2";
+        GameObject.Find("Hero").GetComponent<HeroMovement>().specialAttack = sp;
+        GameObject.Find("Hero").GetComponent<HeroMovement>().maxHealth = lf;
+        GameObject.Find("Hero").GetComponent<HeroMovement>().multiplier = mt;
+        GameObject.Find("Hero").GetComponent<HeroMovement>().actualDamage = dm;
+
+        SceneManager.UnloadSceneAsync(SceneManager.GetSceneAt(0));
         transitionAnim.SetTrigger("FadeIn");
+    }
+
+    void Awake()
+    {
+        GameObject[] objs = GameObject.FindGameObjectsWithTag("Player");
+
+        if (objs.Length > 1)
+        {
+            Destroy(this);
+        }
+
+        DontDestroyOnLoad(this);
     }
 
 

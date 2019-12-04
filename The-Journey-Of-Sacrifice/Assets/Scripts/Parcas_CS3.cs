@@ -16,6 +16,8 @@ public class Parcas_CS3 : MonoBehaviour
     public GameObject Thanatos;
     public GameObject Artmis;
 
+    public GameObject Hero;
+
 
     public Animator transitionAnim;
     public string sceneToLoad;
@@ -42,11 +44,21 @@ public class Parcas_CS3 : MonoBehaviour
         yield return new WaitForSeconds(1.5f);        
         var loading = SceneManager.LoadSceneAsync(sceneToLoad, LoadSceneMode.Additive);
         yield return loading;
+        int sp = GameObject.Find("Hero").GetComponent<HeroMovement>().specialAttack;
+        int lf = GameObject.Find("Hero").GetComponent<HeroMovement>().maxHealth;
+        float mt = GameObject.Find("Hero").GetComponent<HeroMovement>().multiplier;
+        int dm = GameObject.Find("Hero").GetComponent<HeroMovement>().actualDamage;
+
+
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneToLoad));
 
         GameObject.Find("Hero").GetComponent<HeroMovement>().sceneToLoad = "Parcas-HeroDeath2";
+        GameObject.Find("Hero").GetComponent<HeroMovement>().specialAttack = sp;
+        GameObject.Find("Hero").GetComponent<HeroMovement>().maxHealth = lf;
+        GameObject.Find("Hero").GetComponent<HeroMovement>().multiplier = mt;
+        GameObject.Find("Hero").GetComponent<HeroMovement>().actualDamage = dm;
 
-        Achlys.GetComponent<Enemy>().maxHealth = Achlys.GetComponent<Enemy>().maxHealth + 200;
+Achlys.GetComponent<Enemy>().maxHealth = Achlys.GetComponent<Enemy>().maxHealth + 200;
         Achlys.GetComponent<Enemy>().baseAttack = 100;
         Achlys.GetComponent<Enemy>().sceneToLoad = "Parcas-SecondBossDefeated";
 
@@ -84,6 +96,9 @@ public class Parcas_CS3 : MonoBehaviour
         {
             Instantiate(Thanatos, new Vector3(0, 0.4f, 0), Quaternion.identity);
         }
+
+        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(0.06f, -10.34f);
+
         SceneManager.UnloadSceneAsync(SceneManager.GetSceneAt(0));
         transitionAnim.SetTrigger("FadeIn");
 
@@ -135,8 +150,12 @@ public class Parcas_CS3 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Hero = GameObject.FindGameObjectWithTag("Player");
+        if (Hero != null)
+        {
+            GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-15, 0);
+        }
         StartCoroutine(Type());
-
     }
 
     // Update is called once per frame

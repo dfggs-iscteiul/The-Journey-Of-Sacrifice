@@ -244,7 +244,7 @@ PrefabInstance:
     - target: {fileID: 5863213689529027327, guid: cd8ea1deffb33d6409e93722339ffca1,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5863213689529027327, guid: cd8ea1deffb33d6409e93722339ffca1,
         type: 3}
@@ -313,75 +313,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd8ea1deffb33d6409e93722339ffca1, type: 3}
---- !u!1001 &1994520858
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1442520905770266710, guid: 25295acb1bfcc85419ab24094e94c1fe,
-        type: 3}
-      propertyPath: m_Name
-      value: Hero
-      objectReference: {fileID: 0}
-    - target: {fileID: 1442520905770266717, guid: 25295acb1bfcc85419ab24094e94c1fe,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -13.081224
-      objectReference: {fileID: 0}
-    - target: {fileID: 1442520905770266717, guid: 25295acb1bfcc85419ab24094e94c1fe,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.6448221
-      objectReference: {fileID: 0}
-    - target: {fileID: 1442520905770266717, guid: 25295acb1bfcc85419ab24094e94c1fe,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1442520905770266717, guid: 25295acb1bfcc85419ab24094e94c1fe,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1442520905770266717, guid: 25295acb1bfcc85419ab24094e94c1fe,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1442520905770266717, guid: 25295acb1bfcc85419ab24094e94c1fe,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1442520905770266717, guid: 25295acb1bfcc85419ab24094e94c1fe,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1442520905770266717, guid: 25295acb1bfcc85419ab24094e94c1fe,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1442520905770266717, guid: 25295acb1bfcc85419ab24094e94c1fe,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1442520905770266717, guid: 25295acb1bfcc85419ab24094e94c1fe,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1442520905770266717, guid: 25295acb1bfcc85419ab24094e94c1fe,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 25295acb1bfcc85419ab24094e94c1fe, type: 3}
 --- !u!1 &3664154469631581681
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,7 +322,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3664154469631581687}
-  - component: {fileID: 3664154469631581682}
+  - component: {fileID: 3664154469631581683}
   m_Layer: 0
   m_Name: DialogManager
   m_TagString: Untagged
@@ -399,7 +330,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &3664154469631581682
+--- !u!114 &3664154469631581683
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -408,28 +339,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 3664154469631581681}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: feace45e15f058144bc6451c177817c0, type: 3}
+  m_Script: {fileID: 11500000, guid: 016ba8e96e25bc74786b71b3fa86c81a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   textDisplay: {fileID: 5407200719333120518}
   sentences:
-  - "\xC1tropos: Guess that you have defeated your first challenger."
-  - "Laqu\xE9sis: But you didn't win yet! Will your next challenger be a familiar
-    face, or not?"
-  - 'Cloto: CHANCE has already decided so, we invoque you...'
-  - 
+  - "\xC1tropos: I guess it's time for you to show us your worth!"
+  - "Lauqu\xE9sis: And we know that you wont survive us."
+  - 'Cloto: So, WELCOME TO YOUR FINAL TEST!'
   typingSpeed: 0.02
-  Achlys: {fileID: 8598662583238886711, guid: 00435fab48ebb304fa070e46f1e4dfd8, type: 3}
-  Erebus: {fileID: 2407889882484256690, guid: c86db71d63a32fb458a86c0720f6819c, type: 3}
-  Thanatos: {fileID: 7638966017782563687, guid: 751522eed12a05e458bd21ccae39d6e6,
+  Atropos: {fileID: 6600355300417740106, guid: c65f663eca4eecc448438b477f7de31f, type: 3}
+  Laquesis: {fileID: 9050278249609114948, guid: 49b394f069f42474a98a405a76d8a2c0,
     type: 3}
-  Artmis: {fileID: 9091209800571539460, guid: 6478db0396dcea142b9b4ad45c21629a, type: 3}
-  Hero: {fileID: 1442520905770266710, guid: 25295acb1bfcc85419ab24094e94c1fe, type: 3}
+  Cloto: {fileID: 3519356454557248222, guid: 0b1000208b99d204c8bdd997a12dd929, type: 3}
   transitionAnim: {fileID: 8509708844075460086, guid: fbd2771dd84dd794fb38f3ff424b64c3,
     type: 3}
-  sceneToLoad: Second Boss
+  sceneToLoad: Parcas Arena
   releaseSpaceBar: 0
-  totem: {fileID: 1584382322421665423, guid: 0acdd6b9fc903fc49b3693a4a2a08021, type: 3}
 --- !u!4 &3664154469631581687
 Transform:
   m_ObjectHideFlags: 0
@@ -442,7 +368,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &4163477399068950417
 PrefabInstance:
@@ -543,7 +469,7 @@ RectTransform:
   m_Children:
   - {fileID: 5407200719333120516}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

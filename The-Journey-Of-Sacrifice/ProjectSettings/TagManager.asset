@@ -6,6 +6,7 @@ TagManager:
   tags:
   - enemy
   - totem
+  - special
   layers:
   - Default
   - TransparentFX
@@ -40,6 +41,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Story
+    uniqueID: 3929653901
+    locked: 0
   - name: Background
     uniqueID: 1579052851
     locked: 0

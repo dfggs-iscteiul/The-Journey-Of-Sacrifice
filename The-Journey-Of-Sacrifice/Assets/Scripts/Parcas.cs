@@ -56,6 +56,7 @@ public class Parcas : MonoBehaviour{
 
     void checkDistance()
     {
+
         if (Vector3.Distance(target.position, transform.position) <= chaseRadius && Vector3.Distance(target.position, transform.position) > attackRadius && targetGO.transform.position.y < maxY && targetGO.transform.position.y > minY)
         {
             enemyState = EnemyState.walk;
@@ -130,7 +131,18 @@ public class Parcas : MonoBehaviour{
         yield return new WaitForSeconds(1.5f);
         var loading = SceneManager.LoadSceneAsync("ParcasDefeated", LoadSceneMode.Additive);
         yield return loading;
+        int sp = GameObject.Find("Hero").GetComponent<HeroMovement>().specialAttack;
+        int lf = GameObject.Find("Hero").GetComponent<HeroMovement>().maxHealth;
+        float mt = GameObject.Find("Hero").GetComponent<HeroMovement>().multiplier;
+        int dm = GameObject.Find("Hero").GetComponent<HeroMovement>().actualDamage;
+
         SceneManager.SetActiveScene(SceneManager.GetSceneByName("ParcasDefeated"));
+
+
+        GameObject.Find("Hero").GetComponent<HeroMovement>().specialAttack = sp;
+        GameObject.Find("Hero").GetComponent<HeroMovement>().maxHealth = lf;
+        GameObject.Find("Hero").GetComponent<HeroMovement>().multiplier = mt;
+        GameObject.Find("Hero").GetComponent<HeroMovement>().actualDamage = dm;
         SceneManager.UnloadSceneAsync(SceneManager.GetSceneAt(0));
         transitionAnim.SetTrigger("FadeIn");
     }
