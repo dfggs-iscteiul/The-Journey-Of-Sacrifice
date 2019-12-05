@@ -785,8 +785,9 @@ MonoBehaviour:
   - 'Old Man: Or would you face this JOURNEY OF SACRIFICE?'
   typingSpeed: 0.02
   transitionAnim: {fileID: 6762785907782498950}
-  sceneToLoad: Story-CS3
+  sceneToLoad: Menu
   releaseSpaceBar: 0
+  hero: {fileID: 0}
 --- !u!95 &6762785907782498950 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5863213688780681976, guid: cd8ea1deffb33d6409e93722339ffca1,
