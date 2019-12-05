@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 6d03d1f8c5f17cc48a2d48741fce4abe
+  - enabled: 1
     path: Assets/Scenes/First.unity
     guid: 165bd6e6c6b88a54dbb85490b679444e
   - enabled: 1
@@ -29,6 +32,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Parcas-HeroDeath3.unity
     guid: 90b5be389930f72469f926d86a428871
+  - enabled: 1
+    path: Assets/Scenes/End.unity
+    guid: 0211e9d4839ab0a4fa2b9992356b6f05
+  - enabled: 1
+    path: Assets/Scenes/Parcas-ForthBossDefeated.unity
+    guid: 846bb35559197344d979e17bf8db507b
+  - enabled: 1
+    path: Assets/Scenes/Parcas-HeroDeath5.unity
+    guid: 30855ac09e576d84fb7e709d49d69a7f
+  - enabled: 1
+    path: Assets/Scenes/ParcasDefeated.unity
+    guid: ee1165158e7a13e4f81d82a034d80faa
   - enabled: 1
     path: Assets/Scenes/Parcas-HeroDeath4.unity
     guid: 704e73dabc1f50d4a9dcab21e85ef629
