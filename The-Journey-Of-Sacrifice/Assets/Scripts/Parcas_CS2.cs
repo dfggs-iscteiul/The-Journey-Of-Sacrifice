@@ -20,10 +20,11 @@ public class Parcas_CS2 : MonoBehaviour
     public GameObject Artmis;
     public GameObject Hero;
 
-
     public Animator transitionAnim;
     public string sceneToLoad;
     private string name = "";
+
+    public Camera camera;
 
 
     public bool releaseSpaceBar = false;
@@ -77,6 +78,8 @@ public class Parcas_CS2 : MonoBehaviour
             Instantiate(Thanatos, new Vector3(0, 6, 0), Quaternion.identity);
         }
         GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(0.06f, -10.55f);
+
+
         SceneManager.UnloadSceneAsync(SceneManager.GetSceneAt(0));
         transitionAnim.SetTrigger("FadeIn");
 

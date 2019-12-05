@@ -26,18 +26,21 @@ public class Totem : MonoBehaviour
                 {
                     case 1:
                         player.GetComponent<HeroMovement>().maxHealth = player.GetComponent<HeroMovement>().maxHealth + 300;
+                        player.GetComponent<HeroMovement>().maxHealth = player.GetComponent<HeroMovement>().health + 300;
                         sentences[0] = "The mythical beings gave you a boost of 300HP";
                         done = true;
                         StartCoroutine(Type());
                         break;
                     case 2:
                         player.GetComponent<HeroMovement>().maxHealth = player.GetComponent<HeroMovement>().maxHealth + 400;
+                        player.GetComponent<HeroMovement>().maxHealth = player.GetComponent<HeroMovement>().health + 400;
                         sentences[0] = "The mythical beings gave you a boost of 400HP";
                         done = true;
                         StartCoroutine(Type());
                         break;
                     case 3:
                         player.GetComponent<HeroMovement>().maxHealth = player.GetComponent<HeroMovement>().maxHealth + 500;
+                        player.GetComponent<HeroMovement>().maxHealth = player.GetComponent<HeroMovement>().health + 500;
                         sentences[0] = "The mythical beings gave you a boost of 500HP";
                         done = true;
                         StartCoroutine(Type());
@@ -62,6 +65,7 @@ public class Totem : MonoBehaviour
                         break;
                     case 7:
                         player.GetComponent<HeroMovement>().maxHealth = player.GetComponent<HeroMovement>().maxHealth + 500;
+                        player.GetComponent<HeroMovement>().maxHealth = player.GetComponent<HeroMovement>().health + 500;
                         player.GetComponent<HeroMovement>().multiplier = 5f;
                         sentences[0] = "The mythical beings gave you a boost of 500HP and multiplied your attack by 5x";
                         done = true;

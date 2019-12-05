@@ -349,7 +349,7 @@ MonoBehaviour:
   - 'Cloto: So your first challenger will be...'
   - 
   typingSpeed: 0.02
-  hero: {fileID: 0}
+  hero: {fileID: 1442520905770266710, guid: 25295acb1bfcc85419ab24094e94c1fe, type: 3}
   Achlys: {fileID: 8598662583238886711, guid: 00435fab48ebb304fa070e46f1e4dfd8, type: 3}
   Erebus: {fileID: 2407889882484256690, guid: c86db71d63a32fb458a86c0720f6819c, type: 3}
   Thanatos: {fileID: 7638966017782563687, guid: 751522eed12a05e458bd21ccae39d6e6,
@@ -359,6 +359,7 @@ MonoBehaviour:
   transitionAnim: {fileID: 8509708844075460086, guid: fbd2771dd84dd794fb38f3ff424b64c3,
     type: 3}
   sceneToLoad: FirstBoss
+  camera: {fileID: 1036779866}
   releaseSpaceBar: 0
   totem: {fileID: 1584382322421665423, guid: 0acdd6b9fc903fc49b3693a4a2a08021, type: 3}
 --- !u!4 &3664154469631581687

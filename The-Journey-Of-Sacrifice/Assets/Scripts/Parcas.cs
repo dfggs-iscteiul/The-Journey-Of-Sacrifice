@@ -36,6 +36,8 @@ public class Parcas : MonoBehaviour{
 
     private int time;
 
+    public bool sp = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -66,6 +68,11 @@ public class Parcas : MonoBehaviour{
         else if (Vector3.Distance(target.position, transform.position) <= attackRadius && targetGO.GetComponent<Animator>().GetBool("attacking"))
         {
             TakeDamage((int)targetGO.GetComponent<HeroMovement>().actualDamage);
+        }
+        else if (sp == true)
+        {
+            TakeDamage((int)targetGO.GetComponent<HeroMovement>().actualDamage);
+            sp = false;
         }
         else if (Vector3.Distance(target.position, transform.position) <= attackRadius)
         {
@@ -131,18 +138,18 @@ public class Parcas : MonoBehaviour{
         yield return new WaitForSeconds(1.5f);
         var loading = SceneManager.LoadSceneAsync("ParcasDefeated", LoadSceneMode.Additive);
         yield return loading;
-        int sp = GameObject.Find("Hero").GetComponent<HeroMovement>().specialAttack;
-        int lf = GameObject.Find("Hero").GetComponent<HeroMovement>().maxHealth;
-        float mt = GameObject.Find("Hero").GetComponent<HeroMovement>().multiplier;
-        int dm = GameObject.Find("Hero").GetComponent<HeroMovement>().actualDamage;
+        int sp = GameObject.FindWithTag("Player").GetComponent<HeroMovement>().specialAttack;
+        int lf = GameObject.FindWithTag("Player").GetComponent<HeroMovement>().maxHealth;
+        float mt = GameObject.FindWithTag("Player").GetComponent<HeroMovement>().multiplier;
+        int dm = GameObject.FindWithTag("Player").GetComponent<HeroMovement>().actualDamage;
 
         SceneManager.SetActiveScene(SceneManager.GetSceneByName("ParcasDefeated"));
 
 
-        GameObject.Find("Hero").GetComponent<HeroMovement>().specialAttack = sp;
-        GameObject.Find("Hero").GetComponent<HeroMovement>().maxHealth = lf;
-        GameObject.Find("Hero").GetComponent<HeroMovement>().multiplier = mt;
-        GameObject.Find("Hero").GetComponent<HeroMovement>().actualDamage = dm;
+        GameObject.FindWithTag("Player").GetComponent<HeroMovement>().specialAttack = sp;
+        GameObject.FindWithTag("Player").GetComponent<HeroMovement>().maxHealth = lf;
+        GameObject.FindWithTag("Player").GetComponent<HeroMovement>().multiplier = mt;
+        GameObject.FindWithTag("Player").GetComponent<HeroMovement>().actualDamage = dm;
         SceneManager.UnloadSceneAsync(SceneManager.GetSceneAt(0));
         transitionAnim.SetTrigger("FadeIn");
     }

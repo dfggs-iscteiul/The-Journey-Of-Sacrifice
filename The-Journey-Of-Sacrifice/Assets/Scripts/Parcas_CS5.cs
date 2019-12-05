@@ -43,18 +43,18 @@ public class Parcas_CS5 : MonoBehaviour
         var loading = SceneManager.LoadSceneAsync(sceneToLoad, LoadSceneMode.Additive);
         yield return loading;
 
-        int sp = GameObject.Find("Hero").GetComponent<HeroMovement>().specialAttack;
-        int lf = GameObject.Find("Hero").GetComponent<HeroMovement>().maxHealth;
-        float mt = GameObject.Find("Hero").GetComponent<HeroMovement>().multiplier;
-        int dm = GameObject.Find("Hero").GetComponent<HeroMovement>().actualDamage;
+        int sp = GameObject.FindWithTag("Player").GetComponent<HeroMovement>().specialAttack;
+        int lf = GameObject.FindWithTag("Player").GetComponent<HeroMovement>().maxHealth;
+        float mt = GameObject.FindWithTag("Player").GetComponent<HeroMovement>().multiplier;
+        int dm = GameObject.FindWithTag("Player").GetComponent<HeroMovement>().actualDamage;
 
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneToLoad));
 
-        GameObject.Find("Hero").GetComponent<HeroMovement>().sceneToLoad = "Parcas-HeroDeath4";
-        GameObject.Find("Hero").GetComponent<HeroMovement>().specialAttack = sp;
-        GameObject.Find("Hero").GetComponent<HeroMovement>().maxHealth = lf;
-        GameObject.Find("Hero").GetComponent<HeroMovement>().multiplier = mt;
-        GameObject.Find("Hero").GetComponent<HeroMovement>().actualDamage = dm;
+        GameObject.FindWithTag("Player").GetComponent<HeroMovement>().sceneToLoad = "Parcas-HeroDeath4";
+        GameObject.FindWithTag("Player").GetComponent<HeroMovement>().specialAttack = sp;
+        GameObject.FindWithTag("Player").GetComponent<HeroMovement>().maxHealth = lf;
+        GameObject.FindWithTag("Player").GetComponent<HeroMovement>().multiplier = mt;
+        GameObject.FindWithTag("Player").GetComponent<HeroMovement>().actualDamage = dm;
 
         Achlys.GetComponent<Enemy>().maxHealth = Achlys.GetComponent<Enemy>().maxHealth + 300;
         Achlys.GetComponent<Enemy>().baseAttack = 300;
@@ -75,7 +75,7 @@ public class Parcas_CS5 : MonoBehaviour
         Thanatos.GetComponent<Enemy>().baseAttack = 300;
         Thanatos.GetComponent<Enemy>().sceneToLoad = "Parcas-ForthBossDefeated";
 
-        GameObject.FindGameObjectWithTag("totem").transform.position = new Vector3(-0.64f, 1.36f);
+        GameObject.FindGameObjectWithTag("totem").transform.position = new Vector3(-19.09f, 15.08f);
 
         if (name == "ACHLYS")
         {

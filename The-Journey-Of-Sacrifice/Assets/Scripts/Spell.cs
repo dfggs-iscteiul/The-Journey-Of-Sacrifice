@@ -23,12 +23,23 @@ public class Spell : MonoBehaviour
     }
     void FixedUpdate()
     {
-        Vector2 direction = targetGO.transform.position - transform.position;
-        myRigidBody.velocity = direction.normalized * speed;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        Destroy(gameObject,5);
-
+        if (targetGO.GetComponent<Enemy>()!=null && Vector3.Distance(transform.position, targetGO.transform.position) <= targetGO.GetComponent<Enemy>().attackRadius)
+        {
+            targetGO.GetComponent<Enemy>().sp = true;
+            Destroy(gameObject);
+        }
+        else if (targetGO.GetComponent<Parcas>() != null && Vector3.Distance(transform.position, targetGO.transform.position) <= targetGO.GetComponent<Parcas>().attackRadius)
+        {
+            targetGO.GetComponent<Parcas>().sp = true;
+            Destroy(gameObject);
+        }
+        else
+        {
+            Vector2 direction = targetGO.transform.position - transform.position;
+            myRigidBody.velocity = direction.normalized * speed;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        }
     }
 
     }

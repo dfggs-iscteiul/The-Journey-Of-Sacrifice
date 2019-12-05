@@ -18,6 +18,8 @@ public class Parcas_CS1 : MonoBehaviour
 
     public GameObject hero;
 
+    private int special = 0;
+
     IEnumerator Type()
     {
         yield return new WaitForSeconds(1f);
@@ -34,25 +36,35 @@ public class Parcas_CS1 : MonoBehaviour
         var loading = SceneManager.LoadSceneAsync(sceneToLoad, LoadSceneMode.Additive);
         yield return loading;
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneToLoad));
-        Instantiate(hero, new Vector3(-0.46f,-1.06f), Quaternion.identity);
-        int special = (int)Mathf.Floor(1 + 4 * Random.Range(0f, 1f));
-        if (special == 1)
+        if (GameObject.FindGameObjectWithTag("Player") == null)
         {
-            hero.GetComponent<HeroMovement>().specialAttack = 1;
+            Instantiate(hero, new Vector3(-0.41f, -3.29f), Quaternion.identity);
         }
-        if (special == 2)
+        while (special == 0)
         {
-            hero.GetComponent<HeroMovement>().specialAttack = 2;
-        }
-        if (special == 3)
-        {
-           hero.GetComponent<HeroMovement>().specialAttack = 3;
-        }
-        if (special == 4)
-        {
-            hero.GetComponent<HeroMovement>().specialAttack = 4;
+            special = (int)Mathf.Floor(1 + 4 * Random.Range(0f, 1f));
+            if (special == 1)
+            {
+                hero.GetComponent<HeroMovement>().specialAttack = 1;
+            }
+            if (special == 2)
+            {
+                hero.GetComponent<HeroMovement>().specialAttack = 2;
+            }
+            if (special == 3)
+            {
+                hero.GetComponent<HeroMovement>().specialAttack = 3;
+            }
+            if (special == 4)
+            {
+                hero.GetComponent<HeroMovement>().specialAttack = 4;
+            }
         }
 
+        if (sceneToLoad == "First")
+        {
+            GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-0.41f, -3.29f);
+        }
         SceneManager.UnloadSceneAsync(SceneManager.GetSceneAt(0));
         transitionAnim.SetTrigger("FadeIn");
 
@@ -78,7 +90,10 @@ public class Parcas_CS1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-15, 0);
+        if (GameObject.FindGameObjectWithTag("Player") != null)
+        {
+            GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-15, 0);
+        }
         StartCoroutine(Type());
     }
 

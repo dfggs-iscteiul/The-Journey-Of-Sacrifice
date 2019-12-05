@@ -771,6 +771,7 @@ MonoBehaviour:
   transitionAnim: {fileID: 6762785907782498950}
   sceneToLoad: Parcas-CS1
   releaseSpaceBar: 0
+  hero: {fileID: 1442520905770266710, guid: 25295acb1bfcc85419ab24094e94c1fe, type: 3}
 --- !u!95 &6762785907782498950 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5863213688780681976, guid: cd8ea1deffb33d6409e93722339ffca1,
