@@ -147,7 +147,7 @@ Camera:
   m_GameObject: {fileID: 1036779864}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 4
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
@@ -354,6 +354,7 @@ MonoBehaviour:
   Thanatos: {fileID: 7638966017782563687, guid: 751522eed12a05e458bd21ccae39d6e6,
     type: 3}
   Artmis: {fileID: 9091209800571539460, guid: 6478db0396dcea142b9b4ad45c21629a, type: 3}
+  Hero: {fileID: 0}
   transitionAnim: {fileID: 8509708844075460086, guid: fbd2771dd84dd794fb38f3ff424b64c3,
     type: 3}
   sceneToLoad: Second Boss

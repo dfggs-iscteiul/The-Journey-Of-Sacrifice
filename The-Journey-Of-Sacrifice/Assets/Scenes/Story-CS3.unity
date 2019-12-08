@@ -312,7 +312,7 @@ Camera:
   m_GameObject: {fileID: 1036779864}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 4
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
@@ -769,6 +769,7 @@ MonoBehaviour:
   transitionAnim: {fileID: 6762785907782498950}
   sceneToLoad: Story-CS4
   releaseSpaceBar: 0
+  hero: {fileID: 1442520905770266710, guid: 25295acb1bfcc85419ab24094e94c1fe, type: 3}
 --- !u!95 &6762785907782498950 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5863213688780681976, guid: cd8ea1deffb33d6409e93722339ffca1,

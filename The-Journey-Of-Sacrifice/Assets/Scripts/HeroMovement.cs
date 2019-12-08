@@ -186,25 +186,25 @@ public class HeroMovement : MonoBehaviour
                 {
 
                     Instantiate(leaf, transform.position, Quaternion.identity);
-                    actualDamage += 10;
+                    actualDamage += 50;
 
                 }
                 else if (specialAttack == 2)
                 {
                     Instantiate(fire, transform.position, Quaternion.identity);
-                    actualDamage += 10;
+                    actualDamage += 50;
 
                 }
                 else if (specialAttack == 3)
                 {
                     Instantiate(water, transform.position, Quaternion.identity);
-                    actualDamage += 10;
+                    actualDamage += 50;
 
                 }
                 else if (specialAttack == 4)
                 {
                     Instantiate(rock, transform.position, Quaternion.identity);
-                    actualDamage += 10;
+                    actualDamage += 50;
                 }
             }
         }
@@ -233,7 +233,7 @@ public class HeroMovement : MonoBehaviour
 
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneToLoad));
 
-        GameObject.FindWithTag("Player").GetComponent<HeroMovement>().sceneToLoad = "Parcas-HeroDeath2";
+        GameObject.FindWithTag("Player").GetComponent<HeroMovement>().sceneToLoad = "sceneToLoad";
         GameObject.FindWithTag("Player").GetComponent<HeroMovement>().specialAttack = sp;
         GameObject.FindWithTag("Player").GetComponent<HeroMovement>().maxHealth = lf;
         GameObject.FindWithTag("Player").GetComponent<HeroMovement>().multiplier = mt;

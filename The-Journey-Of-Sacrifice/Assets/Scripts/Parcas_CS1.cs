@@ -18,8 +18,6 @@ public class Parcas_CS1 : MonoBehaviour
 
     public GameObject hero;
 
-    private int special = 0;
-
     IEnumerator Type()
     {
         yield return new WaitForSeconds(1f);
@@ -40,7 +38,8 @@ public class Parcas_CS1 : MonoBehaviour
         {
             Instantiate(hero, new Vector3(-0.41f, -3.29f), Quaternion.identity);
         }
-        while (special == 0)
+        int special = 0;
+        do
         {
             special = (int)Mathf.Floor(1 + 4 * Random.Range(0f, 1f));
             if (special == 1)
@@ -59,7 +58,8 @@ public class Parcas_CS1 : MonoBehaviour
             {
                 hero.GetComponent<HeroMovement>().specialAttack = 4;
             }
-        }
+        } while (hero.GetComponent<HeroMovement>().specialAttack == 0);
+            
 
         if (sceneToLoad == "First")
         {
@@ -90,9 +90,13 @@ public class Parcas_CS1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (GameObject.FindGameObjectWithTag("Player") != null)
+        if (sceneToLoad != "Parcas-CS1")
         {
-            GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-15, 0);
+            hero = GameObject.FindGameObjectWithTag("Player");
+        }
+        if (hero != null)
+        {
+            hero.transform.position = new Vector3(-15, 0);
         }
         StartCoroutine(Type());
     }

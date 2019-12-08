@@ -147,7 +147,7 @@ Camera:
   m_GameObject: {fileID: 1036779864}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 4
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
@@ -352,6 +352,7 @@ MonoBehaviour:
   Laquesis: {fileID: 9050278249609114948, guid: 49b394f069f42474a98a405a76d8a2c0,
     type: 3}
   Cloto: {fileID: 3519356454557248222, guid: 0b1000208b99d204c8bdd997a12dd929, type: 3}
+  Hero: {fileID: 0}
   transitionAnim: {fileID: 8509708844075460086, guid: fbd2771dd84dd794fb38f3ff424b64c3,
     type: 3}
   sceneToLoad: Parcas Arena

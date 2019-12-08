@@ -25,10 +25,15 @@ public class Hearts : MonoBehaviour
         hero.GetComponent<HeroMovement>().health = hero.GetComponent<HeroMovement>().maxHealth;
 
         heart1 = Instantiate(heart, Camera.main.ScreenToWorldPoint(new Vector3(50, camera.pixelHeight - 50),0), Quaternion.identity);
+        heart1.SetActive(true);
         heart2 = Instantiate(heart, Camera.main.ScreenToWorldPoint(new Vector3(100, camera.pixelHeight - 50),0), Quaternion.identity);
+        heart2.SetActive(true);
         heart3 = Instantiate(heart, Camera.main.ScreenToWorldPoint(new Vector3(150, camera.pixelHeight - 50),0), Quaternion.identity);
+        heart3.SetActive(true);
         heart4 = Instantiate(heart, Camera.main.ScreenToWorldPoint(new Vector3(200, camera.pixelHeight - 50),0), Quaternion.identity);
+        heart4.SetActive(true);
         heart5 = Instantiate(heart, Camera.main.ScreenToWorldPoint(new Vector3(250, camera.pixelHeight - 50),0), Quaternion.identity);
+        heart5.SetActive(true);
 
     }
 
@@ -69,6 +74,7 @@ public class Hearts : MonoBehaviour
         else if (currentHealth <= 0)
         {
             heart1.SetActive(false);
+            hero.GetComponent<HeroMovement>().health = hero.GetComponent<HeroMovement>().maxHealth;
         }
 
     }

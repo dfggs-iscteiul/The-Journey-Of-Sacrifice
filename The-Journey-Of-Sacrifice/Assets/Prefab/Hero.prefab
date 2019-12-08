@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1442520905770266710}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.46, y: -1.06, z: 0}
+  m_LocalPosition: {x: -15, y: 0, z: 0}
   m_LocalScale: {x: 2.72397, y: 2.724833, z: 1.0788}
   m_Children: []
   m_Father: {fileID: 0}
@@ -110,7 +110,7 @@ MonoBehaviour:
   water: {fileID: 8936156350656033217, guid: aa2ad936dba50b446928094d84dea521, type: 3}
   rock: {fileID: 5047200128488839451, guid: 4b0848113817cc84a8137936bd54add6, type: 3}
   leaf: {fileID: 6576070222783801262, guid: 77f50a98c172ba145884f79977f98c6c, type: 3}
-  specialAttack: 0
+  specialAttack: 4
 --- !u!50 &1442520905770266712
 Rigidbody2D:
   serializedVersion: 4

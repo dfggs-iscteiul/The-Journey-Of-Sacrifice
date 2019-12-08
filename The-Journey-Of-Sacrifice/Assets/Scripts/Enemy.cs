@@ -103,7 +103,7 @@ public class Enemy : MonoBehaviour{
 
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneToLoad));
 
-        GameObject.FindWithTag("Player").GetComponent<HeroMovement>().sceneToLoad = "Parcas-HeroDeath5";
+        GameObject.FindWithTag("Player").GetComponent<HeroMovement>().sceneToLoad = sceneToLoad;
         GameObject.FindWithTag("Player").GetComponent<HeroMovement>().specialAttack = sp;
         GameObject.FindWithTag("Player").GetComponent<HeroMovement>().maxHealth = lf;
         GameObject.FindWithTag("Player").GetComponent<HeroMovement>().multiplier = mt;
