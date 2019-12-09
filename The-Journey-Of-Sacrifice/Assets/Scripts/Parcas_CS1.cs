@@ -65,6 +65,10 @@ public class Parcas_CS1 : MonoBehaviour
         {
             GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-0.41f, -3.29f);
         }
+        else
+        {
+            GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-15, 0);
+        }
         SceneManager.UnloadSceneAsync(SceneManager.GetSceneAt(0));
         transitionAnim.SetTrigger("FadeIn");
 
@@ -90,10 +94,6 @@ public class Parcas_CS1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (sceneToLoad != "Parcas-CS1")
-        {
-            hero = GameObject.FindGameObjectWithTag("Player");
-        }
         if (hero != null)
         {
             hero.transform.position = new Vector3(-15, 0);
@@ -104,6 +104,10 @@ public class Parcas_CS1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameObject.FindGameObjectWithTag("Player") != null)
+        {
+            hero = GameObject.FindGameObjectWithTag("Player");
+        }
         if (Input.GetKeyDown("space") & releaseSpaceBar)
         {
             StopCoroutine(Type());
