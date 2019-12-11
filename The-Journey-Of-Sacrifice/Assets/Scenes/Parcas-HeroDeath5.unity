@@ -763,6 +763,6 @@ MonoBehaviour:
   typingSpeed: 0.02
   transitionAnim: {fileID: 8509708844075460086, guid: fbd2771dd84dd794fb38f3ff424b64c3,
     type: 3}
-  sceneToLoad: Parcas Arena
+  sceneToLoad: Parcas-ForthBossDefeated
   releaseSpaceBar: 0
   hero: {fileID: 0}

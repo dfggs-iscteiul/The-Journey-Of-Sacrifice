@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 6d03d1f8c5f17cc48a2d48741fce4abe
   - enabled: 1
+    path: Assets/Scenes/Story-CS4.unity
+    guid: ced705ed79002fe4ab2885b4b44f8ea6
+  - enabled: 1
     path: Assets/Scenes/First.unity
     guid: 165bd6e6c6b88a54dbb85490b679444e
   - enabled: 1
@@ -17,9 +20,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Parcas-CS2.unity
     guid: 6806f254e0851724fa6f0799a3ac80d4
-  - enabled: 1
-    path: Assets/Scenes/Story-CS4.unity
-    guid: ced705ed79002fe4ab2885b4b44f8ea6
   - enabled: 1
     path: Assets/Scenes/Parcas-CS1.unity
     guid: b61b4e01ccccc144f945512786bacafb

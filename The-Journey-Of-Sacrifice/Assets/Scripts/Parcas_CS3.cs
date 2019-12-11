@@ -58,22 +58,22 @@ public class Parcas_CS3 : MonoBehaviour
         GameObject.FindWithTag("Player").GetComponent<HeroMovement>().multiplier = mt;
         GameObject.FindWithTag("Player").GetComponent<HeroMovement>().actualDamage = dm;
 
-Achlys.GetComponent<Enemy>().maxHealth = Achlys.GetComponent<Enemy>().maxHealth + 200;
+Achlys.GetComponent<Enemy>().maxHealth = Achlys.GetComponent<Enemy>().maxHealth + 100;
         Achlys.GetComponent<Enemy>().baseAttack = 100;
         Achlys.GetComponent<Enemy>().sceneToLoad = "Parcas-SecondBossDefeated";
 
 
-        Artmis.GetComponent<Enemy>().maxHealth = Achlys.GetComponent<Enemy>().maxHealth + 200; ;
+        Artmis.GetComponent<Enemy>().maxHealth = Achlys.GetComponent<Enemy>().maxHealth + 100; ;
         Artmis.GetComponent<Enemy>().baseAttack = 100;
         Artmis.GetComponent<Enemy>().sceneToLoad = "Parcas-SecondBossDefeated";
 
 
-        Erebus.GetComponent<Enemy>().maxHealth = Achlys.GetComponent<Enemy>().maxHealth + 200; ;
+        Erebus.GetComponent<Enemy>().maxHealth = Achlys.GetComponent<Enemy>().maxHealth + 100; ;
         Erebus.GetComponent<Enemy>().baseAttack = 100;
         Erebus.GetComponent<Enemy>().sceneToLoad = "Parcas-SecondBossDefeated";
 
 
-        Thanatos.GetComponent<Enemy>().maxHealth = Achlys.GetComponent<Enemy>().maxHealth + 200; ;
+        Thanatos.GetComponent<Enemy>().maxHealth = Achlys.GetComponent<Enemy>().maxHealth + 100; ;
         Thanatos.GetComponent<Enemy>().baseAttack = 100;
         Thanatos.GetComponent<Enemy>().sceneToLoad = "Parcas-SecondBossDefeated";
 

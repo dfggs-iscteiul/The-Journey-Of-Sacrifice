@@ -96,7 +96,7 @@ public class Parcas_CS1 : MonoBehaviour
     {
         if (hero != null)
         {
-            hero.transform.position = new Vector3(-15, 0);
+            hero.transform.position = new Vector3(-30, 0);
         }
         StartCoroutine(Type());
     }
@@ -107,6 +107,7 @@ public class Parcas_CS1 : MonoBehaviour
         if (GameObject.FindGameObjectWithTag("Player") != null)
         {
             hero = GameObject.FindGameObjectWithTag("Player");
+            GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-15, 0);
         }
         if (Input.GetKeyDown("space") & releaseSpaceBar)
         {

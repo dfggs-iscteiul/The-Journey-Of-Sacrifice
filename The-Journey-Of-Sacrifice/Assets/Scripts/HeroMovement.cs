@@ -60,7 +60,6 @@ public class HeroMovement : MonoBehaviour
         {
              targetGO = targetsGO[0];
 
-
             if (targetGO.GetComponent<Parcas>() != null && targetGO != null && currentState != PlayerState.attack && Vector3.Distance(targetGO.GetComponent<Parcas>().transform.position, transform.position) <= targetGO.GetComponent<Parcas>().attackRadius && targetGO.GetComponent<Parcas>().enemyState == Parcas.EnemyState.attack && !wasAttacked)
             {
                 TakeDamage(targetGO.GetComponent<Parcas>().baseAttack);

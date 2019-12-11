@@ -47,6 +47,12 @@ public class Enemy : MonoBehaviour{
     // Update is called once per frame
     void Update()
     {
+
+        if (Input.GetKeyDown("p") )
+        {
+            health = 10;
+        }
+
         targetGO = GameObject.FindWithTag("Player");
         target = GameObject.FindWithTag("Player").transform;
         checkDistance();
