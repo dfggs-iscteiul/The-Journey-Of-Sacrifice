@@ -103,8 +103,8 @@ public class Parcas_CS1 : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        if (GameObject.FindGameObjectWithTag("Player") != null)
+    { 
+        if (GameObject.FindGameObjectWithTag("Player") != null && sceneToLoad != "First")
         {
             hero = GameObject.FindGameObjectWithTag("Player");
             GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(-15, 0);
